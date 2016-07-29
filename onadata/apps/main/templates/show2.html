@@ -1,0 +1,1229 @@
+{% block content %}
+
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://kc.humanitarianresponse.info/butagreeza/forms/tutorial -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>KoBoToolbox</title>
+    <meta name="description" content="KoBoToolbox is a free and open source suite of tools for field data collection for use in challenging environments.">
+    <meta name="author" content="">
+    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    
+
+
+    <link rel="icon" type="image/x-icon" href="http://kc.humanitarianresponse.info/static/images/favicon.ico">
+    <!-- iPhone + iPad icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://kc.humanitarianresponse.info/static/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://kc.humanitarianresponse.info/static/images/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://kc.humanitarianresponse.info/static/img/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="http://kc.humanitarianresponse.info/static/images/apple-touch-icon.png">
+
+    <link href="{{STATIC_URL}}main2/bootstrap.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}main2/screen.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}main2/ona-screen-overrides.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}main2/font-awesome.min.css" rel="stylesheet">
+    <!--[if lte IE 8]>
+      <link href="/static/css/font-awesome-ie7.css" rel="stylesheet">
+    <![endif]-->
+	  <link href="{{STATIC_URL}}main2/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <link href="{{STATIC_URL}}main2/kobo-branding.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}main2/published_forms.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}main2/data_pages.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}main2/vex.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}main2/vex-theme-kobo.css" rel="stylesheet">
+
+    <link href="{{STATIC_URL}}main2/footable.css" rel="stylesheet">
+    
+  <!-- NEW SANDBOX STYLES -->
+  <link href="{{STATIC_URL}}main2/ios-switches.css" rel="stylesheet">
+  <link href="{{STATIC_URL}}main2/kobo-single-project.css" rel="stylesheet">
+  <!-- END NEW SANDBOX STYLES -->
+ <!-- <link href="/static/css/iphone-btn-style.css" rel="stylesheet"/> -->
+
+    <!-- spot to insert stuff for google maps -->
+    
+
+  <!-- a temporary way to hide the kobocat deprecated features -->
+  <style type="text/css">
+  .kc-hide { display: none !important; }
+  </style>
+
+  <!-- NEW SANDBOX HTML OUTSIDE THE CONTAINER -->
+  
+  <style id="poshytip-css-tip__bottomarrow" type="text/css">div.tip__bottomarrow{visibility:hidden;position:absolute;top:0;left:0;}div.tip__bottomarrow table, div.tip__bottomarrow td{margin:0;font-family:inherit;font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;}div.tip__bottomarrow td.tip-bg-image span{display:block;font:1px/1px sans-serif;height:10px;width:10px;overflow:hidden;}div.tip__bottomarrow td.tip-right{background-position:100% 0;}div.tip__bottomarrow td.tip-bottom{background-position:100% 100%;}div.tip__bottomarrow td.tip-left{background-position:0 100%;}div.tip__bottomarrow div.tip-inner{background-position:-10px -10px;}div.tip__bottomarrow div.tip-arrow{visibility:hidden;position:absolute;overflow:hidden;font:1px/1px sans-serif;}</style><style id="poshytip-css-tip__bottomarrow multiline" type="text/css">div.tip__bottomarrow multiline{visibility:hidden;position:absolute;top:0;left:0;}div.tip__bottomarrow multiline table, div.tip__bottomarrow multiline td{margin:0;font-family:inherit;font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;}div.tip__bottomarrow multiline td.tip-bg-image span{display:block;font:1px/1px sans-serif;height:10px;width:10px;overflow:hidden;}div.tip__bottomarrow multiline td.tip-right{background-position:100% 0;}div.tip__bottomarrow multiline td.tip-bottom{background-position:100% 100%;}div.tip__bottomarrow multiline td.tip-left{background-position:0 100%;}div.tip__bottomarrow multiline div.tip-inner{background-position:-10px -10px;}div.tip__bottomarrow multiline div.tip-arrow{visibility:hidden;position:absolute;overflow:hidden;font:1px/1px sans-serif;}</style></head><body class="authenticated" style=""><div class="sub-header-bar">
+    <div class="container__wide">
+      <a class="single-project__toggle-settings"><i class="fa fa-cog"></i> Project Settings</a>
+      <div class="single-project__settings hidden">
+        <div class="settings__left">
+          <div class="settings__general">
+            <!-- <span title="Set here your general form settings" class="poshytip">?</span> -->
+            <h2 class="settings__group-label">
+              Form Settings
+            </h2>
+
+            <div class="settings__form-item">
+              <label class="settings__form-label">
+                Accept Submissions
+              </label>
+              <label><input id="active-form" type="checkbox" class="ios-switch" checked="" data-url="/butagreeza/forms/tutorial/edit"><div class="switch"></div></label>
+            </div>
+
+            <div class="settings__form-item">
+              <label class="settings__form-label">Existing Form Files</label>
+              <ul class="settings__files">
+                
+              </ul>
+
+              
+              <button class="single-project__button single-project__add-media">+ Add Document</button>
+
+              <form action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/edit" method="post" enctype="multipart/form-data" class="single-project__media-upload hidden">
+                  <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+                  <ul class="nav nav-tabs">
+                      <li class="active"><a href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial#media_upload" data-toggle="tab">Media Upload</a></li>
+                      <li><a href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial#media_url_add" data-toggle="tab">Media URL</a></li>
+                  </ul>
+                  <div class="tab-content">
+                      <div class="tab-pane active" id="media_upload">
+                          <input type="file" multiple="" name="media" id="id_media">
+                          <input type="submit" class="single-project__button" value="Upload">
+                      </div>
+                      <div class="tab-pane" id="media_url_add">
+                          <label for="id_media">Media url:</label>
+                          <input type="text" name="media_url" id="id_media_url">
+                          <input type="submit" class="single-project__button" value="Save Media URL">
+                      </div>
+                  </div>
+              </form>
+              
+            </div>
+
+          </div>  <!-- END .settings__general -->
+
+          <div class="settings__delete-project">
+            <h2 class="settings__group-label">
+              Delete project with all data and its form
+            </h2>
+            <button data-backdrop="true" data-keyboard="true" class="single-project__button single-project__button-delete">
+                Delete
+            </button>
+
+          </div>
+
+          
+          <div class="settings__rest-services">
+              <h2 class="settings__group-label">Rest Services</h2>
+              <div id="restservice_tab">
+
+    <div id="addserviceformstatus"></div>
+    <div id="addserviceform-container">
+    <form name="addserviceform" id="addserviceform" action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/addservice" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+    <div class="tab-content bordered-side">
+        <div class="tab-pane active" id="upload">
+            <table class="narrow-labels">
+                <tbody><tr><th><label for="id_service_name">Service Name:</label></th><td><select id="id_service_name" maxlength="50" name="service_name">
+<option value="f2dhis2">f2dhis2</option>
+<option value="generic_json">JSON POST</option>
+<option value="generic_xml">XML POST</option>
+<option value="bamboo">bamboo</option>
+</select></td></tr>
+<tr><th><label for="id_service_url">Service URL:</label></th><td><input id="id_service_url" name="service_url" type="url"></td></tr>
+            </tbody></table>
+        </div>
+    </div>
+    <div class="form-actions bordered-side bordered-bottom nomargintop">
+        <input type="submit" class="btn large btn-primary" value="Add service">
+    </div>
+    </form>
+    <ol id="restservice_list">
+        
+    </ol>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        var attach_delete = function(){
+            var el = $(this);
+            $.post(el.data('url'), "service-id=" + el.data('id'), function(data){
+                el.parent().remove();
+            });
+            return false;
+        };
+
+        $('a.restserviceitem').click(attach_delete);
+        $(document).on('submit', '#addserviceform', function(evt){
+            evt.preventDefault();
+            $.post(this.action, $(this).serialize(), function(data){
+                try{
+                    var rs = $.parseJSON(data);
+                    if (rs.status){
+                        if(rs.status == 'success'){
+                            $("#addserviceform").each(function(){
+                                this.reset();
+                            });
+                            if(rs.restservice){
+                                $("#restservice_list").append(rs.restservice);
+                                $("#restservice_list a.restserviceitem").click(attach_delete);
+                            }
+                        }
+                        $('#addserviceformstatus').html(rs.message);
+                    }
+
+                }catch (e){
+                }
+            });
+            return false;
+        });
+    });
+    </script>
+
+</div>
+          </div>
+          
+
+        </div>
+
+        <div class="settings__right">
+          <h2 class="settings__group-label">
+            How would you like to share your project
+          </h2>
+
+          <div class="settings__form-item">
+            <label class="settings__form-label">
+              Share Project Publicly
+            </label>
+            <label>
+              <input id="form-shared" type="checkbox" class="ios-switch" data-url="/butagreeza/forms/tutorial/edit">
+              <div title="Allow anyone from the web to view this page." class="poshytip switch"></div>
+            </label>
+          </div>
+
+          <div class="settings__form-item">
+            <label class="settings__form-label">
+              Share Data Publicly
+            </label>
+            <label>
+              <input id="data-shared" type="checkbox" class="ios-switch" data-url="/butagreeza/forms/tutorial/edit">
+              <div title="Allow anyone from the web to inspect this project’s data." class="poshytip switch"></div>
+            </label>
+          </div>
+
+          <div class="settings__form-item">
+            <label class="settings__form-label">
+              Share project with other users
+            </label>
+            
+            Sharing by link is <strong>off</strong>
+            
+            
+            <form action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/perms" method="post">
+                <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+                <input type="hidden" name="perm_type" value="link">
+                <input type="hidden" name="for_user" value="toggle">
+                <input type="submit" class="single-project__button" value="Turn on">
+            </form>
+            
+            <ul>
+                
+                <li>butagreeza: Can Edit | Can View | Can submit to</li>
+                
+            </ul>
+            
+            <form action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/perms" method="post">
+                <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+                <table class="narrow-labels">
+                <tbody><tr><th><label for="autocomplete">For user:</label></th><td><input autocomplete="off" data-provide="typeahead" id="autocomplete" name="for_user" type="text"></td></tr>
+<tr><th><label for="id_perm_type">Perm type:</label></th><td><select id="id_perm_type" name="perm_type">
+<option value="view">Can view</option>
+<option value="edit">Can edit</option>
+<option value="report">Can submit to</option>
+<option value="remove">Remove permissions</option>
+</select></td></tr>
+                </tbody></table>
+                <input type="submit" class="single-project__button" value="Save Permissions">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Project title and background docs -->
+  <header class="single-project__header">
+      <hgroup class="container">
+        
+          <form>
+          <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+            <input type="text" id="title" class="input-xxlarge present" value="tutorial">
+            <a id="title_save" data-id="title" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial" class="hidden single-project__button bind-save" data-url="/butagreeza/forms/tutorial/edit">save</a>
+          </form>
+        
+
+        <div class="single-project__toggle-documents">
+          <i class="fa fa-paperclip"></i> <i class="doctoggle__caret fa fa-caret-right"></i>
+          
+            <form class="single-project__toggle-description">
+              <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+              <input type="text" id="description" name="textarea" value="tutorial" placeholder="Add a description to your project">
+                <a id="description_save" data-id="description" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial" class="single-project__button bind-save" data-url="/butagreeza/forms/tutorial/edit">save</a>
+            </form>
+          
+        </div>
+        <div class="single-project__documents hidden">
+          <div class="single-project__documents-label">Background Documents</div>
+
+          
+
+          
+            <button class="single-project__button single-project__add-bg-doc">+ Add Document</button>
+
+            <form action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/edit" method="post" enctype="multipart/form-data" class="single-project__bg-doc-upload hidden-form">
+                <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+                <table>
+                    <tbody><tr><th><label for="id_doc">Supporting document:</label></th><td><input id="id_doc" name="doc" type="file"></td></tr>
+                </tbody></table>
+                <input type="submit" class="single-project__button" value="Upload">
+            </form>
+          
+
+
+        </div>
+      </hgroup>
+  </header>
+
+  <!-- Delete form (in vex window) -->
+  
+  <div class="kc-hide">
+    <div id="delete-form">
+        <form action="http://kc.humanitarianresponse.info/butagreeza/delete/tutorial/" method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+            <div class="vex-header">
+                <h3>Delete Confirmation</h3>
+            </div>
+            <div class="vex-kobo-body">
+                <p>Are you sure you want to delete the form 'tutorial'? This form has <strong>2</strong> submissions associated with it that will also be deleted. If you are unsure about deleting this form press 'Cancel' and consider 'Archiving' the form instead.</p>
+            </div>
+            <div class="vex-footer">
+                <a href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial#" onclick="vex.close(vexDelete.data().vex.id)" class="btn btn-transparent" data-original-title="" title="">Cancel</a>
+                <button class="btn btn-danger form-submit" data-original-title="" title="">Delete</button>
+            </div>
+        </form>
+    </div>
+  </div>
+  
+
+  <!-- END NEW SANDBOX HTML OUTSIDE THE CONTAINER -->
+
+
+  
+
+  
+  
+
+    
+		
+
+<header class="header-bar">
+  <div class="container__wide">
+    <span class="header-bar__top-logo pull-right"></span>
+    <a href="http://support.kobotoolbox.org/" class="header-bar__support pull-right" target="_blank" title="Visit our self-help pages or ask a support question (opens in new tab)">Support</a>
+    
+      <span class="header-bar__top-level-menu-button">
+        <i class="fa fa-bars fa-lg fa-inverse"></i>
+      </span>
+    
+    <h1 class="header-bar__title"><a href="http://kc.humanitarianresponse.info/"><span class="header-bar__title-text">Projects</span></a></h1>
+  </div>
+</header>
+
+
+<section class="top-level-menu">
+  <ul>
+    <li class="top-level-menu__item">
+      <a href="http://localhost:8000/#/forms">
+        <i class="header-bar__page-icon fa fa-fw fa-file-text-o"></i>
+        Forms
+      </a>
+    </li>
+    <li class="top-level-menu__item">
+      <a href="http://localhost:8000/#/library/questions">
+        <i class="header-bar__page-icon  fa  fa-fw  fa-folder"></i>
+        Question Library
+      </a>
+    </li>
+
+    
+    <li class="top-level-menu__item ">
+      <a href="http://kc.humanitarianresponse.info/">
+        <i class="header-bar__page-icon fa fa-fw fa-globe"></i>
+        Projects
+      </a>
+    </li>
+    
+    <li class="top-level-menu__item ">
+      <a href="http://kc.humanitarianresponse.info/butagreeza/settings">
+        <i class="header-bar__page-icon fa fa-fw fa-cog"></i>
+        Settings
+      </a>
+    </li>
+
+    <li class="top-level-menu__item">
+      <a href="http://kc.humanitarianresponse.info/accounts/logout/">
+        <i class="header-bar__page-icon  fa  fa-fw  fa-sign-out"></i>
+        Sign out
+      </a>
+    </li>
+
+  </ul>
+</section>
+
+
+<div class="navbar navbar-fixed-top hidden" data-dropdown="dropdown">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" data-original-title="" title="">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="http://kc.humanitarianresponse.info/" title="KoBoCAT"><img alt="KoBoCAT" src="{{STATIC_URL}}main2/kobocat_logo.png" style="height: 34px"></a>
+      <div class="nav-collapse collapse">
+          
+          <ul class="nav">
+            
+            <li class="navbutton"><a href="http://kobo.humanitarianresponse.info/">Forms</a></li>
+            
+            
+          </ul>
+          <ul class="nav pull-right">
+            
+            <!-- <li><a id="new-form" href="#" rel="tooltip" title="New Form"><img src="/static/images/upload-icon.png"></a></li> -->
+            <li><a href="http://kc.humanitarianresponse.info/butagreeza">butagreeza</a></li>
+            <li class="dropdown">
+              <a href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial#" class="dropdown-toggle" data-toggle="dropdown">
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="http://kc.humanitarianresponse.info/butagreeza/profile"><i class="icon-user"></i> Public profile</a></li>
+                <li><a href="http://kc.humanitarianresponse.info/butagreeza/settings"><i class="icon-cog"></i> Settings</a></li>
+                <li><a href="http://kc.humanitarianresponse.info/butagreeza/activity"><i class="icon-eye-open"></i> Account Activity</a></li>
+                <li><a href="http://kc.humanitarianresponse.info/butagreeza/api-token"><i class="icon-cog"></i> API Token</a></li>
+                <!--<li><a href="/accounts/password/change/">Change password</a></li>-->
+            <li class="divider"></li>
+                <li><a href="http://kc.humanitarianresponse.info/accounts/logout/"><i class="icon-signout"></i> Sign out</a></li>
+              </ul>
+            </li>
+            
+          </ul>
+          
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+
+    <div class="container-fluid container__wide main None">
+      
+        
+      
+      
+
+
+<!-- NEW SINGLE PROJECT VIEW -->
+    <div class="dashboard__left">
+      <div class="dashboard__submissions">
+        <h2 class="dashboard__group-label">
+          Submissions (2)
+        </h2>
+        <a title="View Submitted Data" href="{% url "onadata.apps.viewer.views.data_view" content_user.username xform.id_string %}" class="dashboard__button dashboard__button-view">
+          <i class="fa fa-table"></i>
+          <span>View data in table</span>
+        </a>
+        <a href="{% url "form-stats" content_user.username xform.id_string %}" class="dashboard__button dashboard__button-analyze">
+          <i class="fa fa-bar-chart-o"></i>
+          <span>Analyze data</span>
+        </a>
+        <a class="dashboard__button dashboard__button-download-data">
+          <i class="fa fa-download"></i>
+          <span>Download data</span>
+        </a>
+
+        <div class="dashboard__download__drop hidden">
+          <a href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/xls/" class="download__drop-button">XLS</a>
+          <a href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/csv/" class="download__drop-button">CSV</a>
+          <a href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/zip/" class="download__drop-button">ZIP</a>
+          <!-- <a href="/butagreeza/exports/tutorial/gdoc/" class="download__drop-button">GDOCS</a> -->
+          <a href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/kml/" class="download__drop-button">KML</a>
+          <a href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/analyser/" class="download__drop-button">Excel Analyser</a>
+          <a href="http://kc.humanitarianresponse.info/butagreeza/reports/tutorial/export/" class="download__drop-button">Advanced Downloads (beta)</a>
+          <!-- or: /<username>/exports/<id_string>/    onadata.apps.export.views._wrapper     formpack_export_menu -->
+
+          <!-- a href="/butagreeza/exports/tutorial/sav_zip/" class="download__drop-button">SAV ZIP</a> -->
+        </div>
+      </div>
+
+      
+      <div class="dashboard__photos">
+        <h2 class="dashboard__group-label">
+          Photos
+        </h2>
+
+        <a title="View Photos" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/photos" class="dashboard__button dashboard__button-view-gallery">
+          <i class="fa fa-eye"></i>
+          <span>View gallery</span>
+        </a>
+        <a href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/zip/" class="dashboard__button dashboard__button-twoline dashboard__button-download-all-photos">
+          <i class="fa fa-download"></i>
+          <span>Download all photos</span>
+        </a>
+      </div>
+      
+
+      <div class="dashboard__form">
+        <h2 class="dashboard__group-label">
+          Form
+        </h2>
+        <div class="dashboard__form-contents">
+          <div class="dashboard__form-formid">
+            tutorial
+            
+
+          </div>
+          <a class="dashboard__formbutton dashboard__formbutton-download">
+            <i class="fa fa-download"></i>
+          </a>
+          <div class="dashboard__form-drop hidden">
+            <a href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/form.xls" class="download__form-drop-button">XLS</a>
+            <a href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/form.xml" class="download__form-drop-button">XML</a>
+            <a href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/spss_labels.zip" class="download__form-drop-button">SPSS Labels</a>
+          </div>
+
+          
+          <!-- trigger preview vex window and the previewModalActivate function which loads the enketo iframe -->
+          <a title="Preview Form" class="dashboard__formbutton dashboard__formbutton-preview">
+            <i class="fa fa-eye"></i><span>Preview</span>
+          </a>
+          
+
+          
+          <div class="kc-hide">
+            <div id="preview-vex">
+                <div class="vex-header"><h3>tutorial - Preview</h3></div>
+                <div class="vex-kobo-body" data-iframe-src="/butagreeza/forms/tutorial/preview"></div>
+            </div>
+          </div>
+          
+
+          
+
+        </div>
+      </div>
+    </div>
+    <div class="dashboard__right">
+      
+      <div class="dashboard__gps">
+        <h2 class="dashboard__group-label">GPS Points</h2>
+
+        <a title="View Map" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/map" class="dashboard__button dashboard__button-view-on-map">
+          <i class="fa fa-map-marker"></i>
+          <span>View on map</span>
+        </a>
+
+        <a href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/kml/" class="dashboard__button dashboard__button-twoline dashboard__button-download-gps-points">
+          <i class="fa fa-download"></i>
+          <span>Download GPS points</span>
+        </a>
+     </div>
+     
+
+      
+      <div class="dashboard__add-data">
+        <h2 class="dashboard__group-label">Add Data</h2>
+
+        <a href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/enter-data" class="dashboard__button dashboard__button-twoline dashboard__button-enter-data" target="_blank">
+          <i class="fa fa-plus"></i>
+          <span>Enter data in browser</span>
+        </a>
+        <a data-href="/butagreeza/forms/tutorial/qrcode" class="dashboard__button dashboard__button-twoline dashboard__button-how-to-collect js-showqr">
+          <i class="fa fa-mobile"></i>
+          <span>How to collect data on mobile device?</span>
+        </a>
+
+        <div class="kc-hide">
+          <div id="popupmodal">
+              <div class="vex-header">
+                  <h3>How to Collect Data on a Mobile Device</h3>
+              </div>
+              <div class="vex-kobo-body">
+                  <div class="qrcode__android">
+                    <span>http://kc.humanitarianresponse.info/butagreeza/</span>
+                  </div>
+                  <h4>Collect data on your Android device with KoBoCollect</h4>
+                  <p>To start collecting data with our 
+                    <a href="https://play.google.com/store/apps/details?id=org.koboc.collect.android">
+                      KoBoCollect Android app</a>
+                      you need to enter the following URL into the URL field in the KoBoCollect settings: </p>
+
+                  <p><a href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/qrcode">http://kc.humanitarianresponse.info/butagreeza</a></p>
+
+                  <p><strong><a target="_blank" href="http://support.kobotoolbox.org/customer/portal/articles/1653782-collecting-data-with-kobocollect-on-android">Click here</a>  to read more about getting started with KoBoCollect</strong></p>
+                  <p class="qr__divider"><span>or</span></p>
+                  <div class="qrcode__code js-img_holder"> </div>
+                  <div class="qrcode__text">
+                    <h4>Collect Data on Any Device in Your Browser</h4>
+                    <p>For iPhones or any other device that has a Web browser, use the following link to enter data - even offline:
+                    </p><p>
+                      <span class="qrcode__enter-data-url">
+                        <a href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/enter-data">http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/enter-data</a>
+                      </span>
+                    <br>
+                    (Or if you have a barcode scanner on your phone, just scan the barcode on the right)
+                    </p>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+      </div>
+      
+
+    </div>
+
+<!-- END NEW SINGLE PROJECT VIEW -->
+
+  <section id="profile" class="kc-hide">
+    <div class="page-header kc-hide">
+      <!-- <img src='https://secure.gravatar.com/avatar/f2faf4642524e2d20d8a389dee70f1f3?s=60&amp;d=https%3A%2F%2Fformhub.org%2Fstatic%2Fimages%2Fformhub_avatar.png' alt='gravatar' width='40' height='40' style='float:left; padding-right:10px;' /> -->
+      <div id="mfeedback">&nbsp;</div>
+    	<h3 class="kc-hide">
+    	  <div style="vertical-align: middle">
+    	  <img src="{{STATIC_URL}}main2/f2faf4642524e2d20d8a389dee70f1f3" alt="gravatar" width="20" height="20">
+    	  <a href="http://kc.humanitarianresponse.info/butagreeza/">butagreeza</a> (Owner) /
+    	  </div>
+    	</h3>
+    </div>
+    <div class="row">
+      <div class="span8">
+        <!-- <h3>Description</h3> -->
+        <div class="bordered kc-hide">
+          <h3>
+              XLSForm
+              <span id="form-shared-public" class="label label-info" style="display: none;">PUBLIC</span>
+              <span id="form-shared-private" class="label label-warning">PRIVATE</span>
+              <span id="form-encrypted" class="label label-important icon-lock label-encrypted" style="display: none;">&nbsp;&nbsp;ENCRYPTED</span>
+          </h3>
+          <br>
+          <div class="btn-toolbar" style="margin-bottom: 9px">
+            <div class="btn-group">
+              <a class="btn btn-success" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/form.xls" data-original-title="" title=""><i class="icon-th icon-white"></i><font color="#FFF"> XLSForm</font></a>
+              <button class="btn dropdown-toggle btn-success" data-toggle="dropdown" data-original-title="" title="">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <input class="input-xxlarge" type="text" size="16" value="https://kc.humanitarianresponse.info/butagreeza/forms/tutorial/form.xls">
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group">
+              <a class="btn" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/form.xml" data-original-title="" title=""><i class="icon-file"></i><font color="#000"> XForm</font></a>
+              <button class="btn dropdown-toggle" data-toggle="dropdown" data-original-title="" title="">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <input class="input-xxlarge" type="text" size="16" value="https://kc.humanitarianresponse.info/butagreeza/forms/tutorial/form.xml">
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group kc-hide">
+              <a class="btn" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/form.json" data-original-title="" title=""><i class="icon-file"></i><font color="#000"> JSONForm</font></a>
+              <button class="btn dropdown-toggle" data-toggle="dropdown" data-original-title="" title="">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <input class="input-xxlarge" type="text" size="16" value="https://kc.humanitarianresponse.info/butagreeza/forms/tutorial/form.json">
+                </li>
+              </ul>
+          </div>
+        </div>
+        <br>
+        
+        <p class="kc-hide">
+            License:
+            
+                
+                    <select disabled="disabled" id="form-license" name="value">
+<option value="No License">No License</option>
+<option value="https://creativecommons.org/licenses/by/3.0/">Attribution CC BY</option>
+<option value="https://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike CC BY-SA</option>
+</select>
+                
+                <a id="form-license_edit" data-id="form-license" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial" class="btn btn-small bind-edit" data-original-title="" title="">edit</a>
+                <a id="form-license_save" data-id="form-license" style="display:none" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial" class="btn btn-small btn-primary bind-save" data-url="/butagreeza/forms/tutorial/edit" data-original-title="" title="">save</a>
+            
+        </p>
+        <p><a id="form-license_info" style="display:none" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial">License information</a></p>
+        <br>
+        <ul class="inline">
+        
+        </ul>
+      </div>
+      <br>
+      <div class="clearfix bordered">
+        <h3>
+            Form Data
+            <span id="data-shared-public" class="label label-info" style="display: none;">PUBLIC</span>
+            <span id="data-shared-private" class="label label-warning">PRIVATE</span>
+            <span id="data-encrypted" class="label label-important icon-lock label-encrypted" style="display: none;">&nbsp;&nbsp;ENCRYPTED</span>
+        </h3>
+        
+        
+        <br>
+        <div class="btn-toolbar" style="margin-bottom: 9px">
+          <div class="btn-group">
+            <a class="btn" href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/csv/" rel="tooltip" data-original-title="csv exports"><i class="icon-download-alt"></i> <font color="#000">csv</font></a>
+            <button class="btn dropdown-toggle" data-toggle="dropdown" data-original-title="" title="">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <input class="input-xxlarge" type="text" size="16" value="https://kc.humanitarianresponse.info/butagreeza/exports/tutorial/csv/">
+              </li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a class="btn" href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/csv_zip/" rel="tooltip" data-original-title="csv zip exports"><i class="icon-download-alt"></i> <font color="#000">csv zip</font></a>
+            <button class="btn dropdown-toggle" data-toggle="dropdown" data-original-title="" title="">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <input class="input-xxlarge" type="text" size="16" value="https://kc.humanitarianresponse.info/butagreeza/exports/tutorial/csv_zip/">
+              </li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a class="btn" href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/sav_zip/" rel="tooltip" data-original-title="SPSS data files zip exports"><i class="icon-download-alt"></i> <font color="#000">sav zip</font></a>
+            <button class="btn dropdown-toggle" data-toggle="dropdown" data-original-title="" title="">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <input class="input-xxlarge" type="text" size="16" value="https://kc.humanitarianresponse.info/butagreeza/exports/tutorial/sav_zip/">
+              </li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a class="btn" href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/xls/" rel="tooltip" data-original-title="xls exports"><i class="icon-download-alt"></i> <font color="#000">xls</font></a>
+            <button class="btn dropdown-toggle" data-toggle="dropdown" data-original-title="" title="">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <input class="input-xxlarge" type="text" size="16" value="https://kc.humanitarianresponse.info/butagreeza/exports/tutorial/xls/">
+              </li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a class="btn" href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/kml/" rel="tooltip" data-original-title="Export to kml File (Google Earth)"><i class="icon-download-alt"></i> <font color="#000">kml</font></a>
+            <button class="btn dropdown-toggle" data-toggle="dropdown" data-original-title="" title="">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <input class="input-xxlarge" type="text" size="16" value="https://kc.humanitarianresponse.info/butagreeza/exports/tutorial/kml/">
+              </li>
+            </ul>
+          </div>
+
+          <div class="btn-group">
+            <a class="btn" href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/zip/" rel="tooltip" data-original-title="Export a zip folder of attachments"><i class="icon-download-alt"></i> <font color="#000">zip</font></a>
+            <button class="btn dropdown-toggle" data-toggle="dropdown" data-original-title="" title="">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <input class="input-xxlarge" type="text" size="16" value="https://kc.humanitarianresponse.info/butagreeza/exports/tutorial/zip/">
+              </li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a class="btn" href="http://kc.humanitarianresponse.info/butagreeza/exports/tutorial/gdoc/" rel="tooltip" data-original-title="Export to google docs" target="_blank"><i class="icon-download-alt"></i> <font color="#000">gdocs</font></a>
+            <button class="btn dropdown-toggle" data-toggle="dropdown" data-original-title="" title="">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <input class="input-xxlarge" type="text" size="16" value="https://kc.humanitarianresponse.info/butagreeza/exports/tutorial/gdoc/">
+                </li>
+            </ul>
+          </div>
+        </div>
+        <h4>Submissions: 2</h4>
+        <br>
+        <p>
+            License:
+            
+                
+                    <select disabled="disabled" id="data-license" name="value">
+<option value="No License">No License</option>
+<option value="http://opendatacommons.org/licenses/pddl/summary/">PDDL</option>
+<option value="http://opendatacommons.org/licenses/by/summary/">ODC-BY</option>
+<option value="http://opendatacommons.org/licenses/odbl/summary/">ODBL</option>
+</select>
+                
+                <a id="data-license_edit" data-id="data-license" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial" class="btn btn-small bind-edit" data-original-title="" title="">edit</a>
+                <a id="data-license_save" data-id="data-license" style="display:none" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial" class="btn btn-small btn-primary bind-save" data-url="/butagreeza/forms/tutorial/edit" data-original-title="" title="">save</a>
+            
+        </p>
+        <p><a id="data-license_info" style="display:none" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial">License information</a></p>
+        <div class="btn-group" style="margin-bottom: 9px">
+	   			
+    		  	<a class="btn btn-info" rel="tooltip" title="" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/map" data-original-title="View Map">
+    				<i class="icon-map-marker icon-white"></i> Map
+    			 </a>
+          
+            <a class="btn btn-info" btn-info="" rel="tooltip" title="" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/photos" data-original-title="View Photos">
+              <i class="icon-camera icon-white"></i> Photos
+            </a>
+            <a class="btn btn-info" btn-info="" rel="tooltip" title="" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/view-data" data-original-title="View Submitted Data">
+                <i class="icon-th-list icon-white"></i> View Data
+            </a>
+            <a class="btn btn-info" btn-info="" rel="tooltip" title="" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/instance" data-original-title="Browse Data (One by One)">
+                <i class="icon-list-alt icon-white"></i> Browse Data
+            </a>
+            <a class="btn btn-info" btn-info="" rel="tooltip" title="" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/stats" data-original-title="View Statistics">
+                <i class="icon-bar-chart icon-white"></i> Statistics
+            </a>
+        </div>
+        
+		
+
+    </div>
+      <br>
+        <div class="clearfix bordered kc-hide">
+                <h3 data-toggle="collapse" class="toggler" data-target="#source_tab">Source</h3>
+                <div id="source_tab" class="collapse">
+                <form action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/edit" method="post" enctype="multipart/form-data">
+
+                
+                <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+                <input type="text" id="source" class="input-xxlarge present" disabled="" rows="3" value="None provided">
+                
+                    <a id="source_edit" data-id="source" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial" class="btn small bind-edit" data-original-title="" title="">edit</a>
+                    <a id="source_save" data-id="source" style="display:none" href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial" class="btn small btn-primary bind-save" data-url="/butagreeza/forms/tutorial/edit" data-original-title="" title="">save</a>
+                
+
+
+                
+                    <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+                    <table>
+                    <tbody><tr><th><label for="id_source">Source document:</label></th><td><input id="id_source" name="source" type="file"></td></tr>
+                    </tbody></table>
+                    <input type="submit" class="btn" value="Upload" data-original-title="" title="">
+                
+            </form>
+            </div>
+        </div>
+        
+        <br>
+        <div class="clearfix bordered kc-hide">
+            <h3 data-toggle="collapse" class="toggler" data-target="#restservice_tab">Rest Services</h3>
+            <div id="restservice_tab" class="collapse">
+            </div>
+        </div>
+        
+        <br>
+
+        <div class="clearfix bordered kc-hide">
+            <h3 data-toggle="collapse" class="toggler" data-target="#map_tab">Mapbox Layer</h3>
+            <div id="map_tab" class="collapse">
+            
+            
+            <form action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/edit" method="post">
+                <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+                <table>
+                <tbody><tr><th><label for="id_map_name">Map name:</label></th><td><input id="id_map_name" maxlength="255" name="map_name" type="text"></td></tr>
+<tr><th><label for="id_attribution">Attribution:</label></th><td><input id="id_attribution" maxlength="255" name="attribution" type="text"></td></tr>
+<tr><th><label for="id_link">JSONP url:</label></th><td><input id="id_link" name="link" type="url"></td></tr>
+                </tbody></table>
+                <input type="submit" class="btn" value="Upload" data-original-title="" title="">
+            </form>
+            
+            </div>
+        </div>
+        <br>
+        <div class="kc-hide">
+            <h3>bamboo</h3>
+            
+                bamboo link is <strong>not active</strong>
+            
+            <form action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/bamboo" method="post">
+                <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+                
+                    <input type="submit" class="btn" value="Activate" data-original-title="" title="">
+                
+                </form>
+            
+        </div>
+        <br>
+        <div class="clearfix bordered kc-hide">
+                <h3 data-toggle="collapse" class="toggler" data-target="#sms_tab">SMS Support (<acronym title="SMS Support is in beta stage now. Please use carefully as API and IDs might change.">beta</acronym>)</h3>
+                <div id="sms_tab" class="collapse">
+                <form action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/edit" method="post" enctype="multipart/form-data">
+
+                
+                
+                    <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+                    <input type="hidden" name="enable_sms_support_trigger" value="yes">
+                    <table>
+                    <tbody><tr><th><label for="id_enable_sms_support">Enable SMS Support:</label></th><td><select id="id_enable_sms_support" name="enable_sms_support">
+<option value="False" selected="selected">No</option>
+<option value="True">Yes</option>
+</select></td></tr>
+<tr><th><label for="id_sms_id_string">SMS Keyword:</label></th><td><input id="id_sms_id_string" maxlength="50" name="sms_id_string" type="text" value="tutorial"></td></tr>
+                    </tbody></table>
+                    <input type="submit" class="btn btn-primary" value="Save Changes" data-original-title="" title="">
+                
+            	</form>
+            	
+            	<div class="sms_autodoc">
+            	
+            		<p class="alert alert-info">Your Form is <strong>not SMS-compatible</strong>. If you want to later enable SMS Support, please fix:<br> All your questions must be in groups.<br>Please check the <a href="http://kc.humanitarianresponse.info/syntax/#9-sms-support">SMS Syntax Page</a>.</p>
+            	
+            	<h4>Usage</h4>
+            	<p>Note that for each case, you can select either the simplest form of the URL (containing only your username) or the one including the <em>id_string</em> of the form.</p>
+            	<p>The latter works without specifyin the <em>SMS Keyword</em> in front of every message.</p>
+            	<p>You would use it when your SMS Setup/Provider is used for only one form.</p>
+            	<select id="sms_support_api"><option>Select an SMS API</option><option value="generic">Generic SMS API</option></select>
+            	<div style="display:none;" class="sms_support_api_doc" id="sms_support_api_doc_generic">
+            		<p>Use the Generic SMS API to write your own wrapper around Formhub.</p>
+            		<ul>
+            			<p>Single SMS Submission<br>[<strong>GET</strong>] <span class="sms_autodoc_example">/butagreeza/sms_submission</span><br>
+							[<strong>GET</strong>] <span class="sms_autodoc_example">/butagreeza/forms/tutorial/sms_submission</span><br>
+            				Params: <span class="sms_autodoc_params">{"identity": "SENDER PHONE NUMBER", "text": "TEXT MESSAGE"}<br>
+            				Returns: <span class="sms_autodoc_params">{"status": "STATUS", "message": "MESSAGE", "id": "ID"}</span></span></p>
+            			<p>Multiple SMS Submissions at once<br>[<strong>POST</strong>] <span class="sms_autodoc_example">/butagreeza/sms_multiple_submissions</span><br>
+            				[<strong>POST</strong>] <span class="sms_autodoc_example">/butagreeza/forms/tutorial/sms_multiple_submissions</span><br>
+            				Params: <span class="sms_autodoc_params">{"messages": [{"identity": "SENDER PHONE NUMBER", "text": "TEXT MESSAGE"}, ]<br>
+            				Returns: <span class="sms_autodoc_params">[{"status": "STATUS", "message": "MESSAGE", "id": "ID"}, ]</span></span></p>
+            		</ul>
+            		<p><span class="sms_autodoc_params">STATUS</span>: One of <span class="sms_autodoc_params">ACCEPTED, REJECTED, PARSING_FAILED</span><br>
+            		   <span class="sms_autodoc_params">MESSAGE</span>: Either an error or success message. Suitable for end user.<br>
+            		   <span class="sms_autodoc_params">ID</span>: Only if successful. A unique ID of the submission.</p>
+            	</div>
+            	
+            	
+            	</div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </section>
+
+
+    </div>
+
+    
+<!-- <footer class="footer">
+  <div class="container">
+	<p>
+	  Powered by <a href="http://www.kobotoolbox.org">KoBoToolbox</a> | <a href="https://github.com/kobotoolbox/kobocat">Github code</a> (BSD License)
+	</p>
+  </div>
+</footer>
+ -->
+
+    
+
+    
+
+
+    <!-- Le javascript -->
+  <script async="" src="{{STATIC_URL}}main2/analytics.js"></script><script type="text/javascript" src="{{STATIC_URL}}main2/saved_resource"></script>
+    <script src="{{STATIC_URL}}main2/jquery.min.js"></script>
+    <script src="{{STATIC_URL}}main2/jquery-migrate.min.js"></script>
+    <script src="{{STATIC_URL}}main2/jquery.tablesorter.min.js"></script>
+    <script src="{{STATIC_URL}}main2/bootstrap.js"></script>
+    <script src="{{STATIC_URL}}main2/bootstrapx-clickover.js"></script>
+    <script src="{{STATIC_URL}}main2/bootstrapx-clickover-btns.js"></script>
+    <script src="{{STATIC_URL}}main2/application.js"></script>
+    <script src="{{STATIC_URL}}main2/vex.combined.min.js"></script>
+    <script>vex.defaultOptions.className = 'vex-theme-kobo';</script>
+    <script src="{{STATIC_URL}}main2/footable.min.js"></script>
+    <!--  -->
+    <script src="{{STATIC_URL}}main2/kobo-branding.js"></script>
+
+    
+<script src="{{STATIC_URL}}main2/jquery.poshytip.js"></script>
+  
+    <script type="text/javascript" src="{{STATIC_URL}}main2/form_actions.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}main2/jquery.cookie.js"></script>
+  
+
+
+<script type="text/javascript">
+
+$('.dashboard__formbutton-preview').click(function previewModalActivate(){
+  var prevWrap = $('#preview-vex .vex-kobo-body');
+  if (prevWrap.data('iframeSrc') && prevWrap.children('iframe').length === 0) {
+    $('<iframe>', {src: prevWrap.data('iframeSrc')}).appendTo(prevWrap);
+  } else {
+    console.error('iframeSrc not set for prevWrap');
+  }
+
+  vex.open({
+    content: $('#preview-vex').clone(),
+    contentClassName: 'vex-content vex-content-large',
+  });
+
+});
+
+
+$(document).ready(function() {
+
+    $('.btn').tooltip();
+
+    // SMS documentation switcher
+    $('#sms_support_api').change(function() {
+      $('.sms_support_api_doc').each(function (){
+        $(this).toggle(false);
+      });
+      var selected = $(this).val();
+      $('#sms_support_api_doc_' + selected).toggle(true);
+    });
+
+    // Typeahead, fetch usernames for permission assign
+    $('#autocomplete').typeahead(
+        {
+            source: function (query, process){
+                return $.get('/typeahead_usernames/', {query: query}, function(data){
+                    return process(data);
+                });
+            }
+        }
+    );
+    //-- end
+
+    var collect_mobile = $('#popupmodal');
+    $(document).on("click", ".js-showqr", function () {
+      vex.open({
+        content: collect_mobile.clone(),
+        contentClassName: 'vex-content vex-content-large',
+      });
+      div_target = $(this).attr('data-target');
+      url = $(this).data('href');
+      $.ajax({
+        url: url,
+        method: 'get',
+        success: function(html){
+          var contents = $('<div>'+html+'</div>');
+          $('.js-img_holder', div_target).html(contents.find('img'));
+          $('.qrcode__enter-data-url').html(contents.find('a'));
+
+        }
+      })
+    });
+
+    
+      $('#data-shared-public').hide();
+    
+    
+      $('#form-shared-public').hide();
+    
+    
+      $('#form-encrypted').hide();
+      $('#data-encrypted').hide();
+    
+
+    // toggle fields
+    
+        $.each(['form-shared', 'data-shared', 'active-form'], function(inx, el) {
+            var cb = $('#' + el + ':checkbox');
+            cb.change(function() {
+              privacyEdit(cb.data('url'), el.split('-')[0]);
+              // legacy
+              $('#' + el + '-public').toggle();
+              $('#' + el + '-private').toggle();
+            });
+        });
+      // add click event to all public (x)forms
+      $('a.clonexls').click(function(){
+        el = $(this);
+        clone_xlsform(el.data('url'), el.data('username'), el.data('id'));
+        return false;
+      });
+    
+    });
+
+  // REST Service
+  $(document).ready(function() {
+      $.get('/butagreeza/forms/tutorial/addservice', function(data){
+          $('#restservice_tab').html(data);
+      });
+  });
+</script>
+
+    <!-- NEW SANDBOX JQUERY CALLS -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+      $(document).on("click", ".single-project__toggle-documents .doctoggle__caret", function () {
+        $('.single-project__documents').toggleClass('hidden');
+        $(this).toggleClass('active');
+        $('.doctoggle__caret').toggleClass('fa-caret-right');
+        $('.doctoggle__caret').toggleClass('fa-caret-down');
+      });
+
+      $(document).on("click", ".single-project__toggle-settings", function () {
+        $('.single-project__settings').toggleClass('hidden');
+        $(this).toggleClass('active');
+        if($('.single-project__settings').is(":visible")) {
+          $.cookie('settingsBoxOpen', true);
+        } else {
+          $.cookie('settingsBoxOpen', false);
+        }
+      });
+
+      $(document).on("click", ".dashboard__button-download-data", function () {
+        $('.dashboard__download__drop').toggleClass('hidden');
+        $(this).toggleClass('active');
+      });
+
+      $(document).on("click", ".dashboard__formbutton-download", function () {
+        $('.dashboard__form-drop').toggleClass('hidden');
+        $(this).toggleClass('active');
+      });
+
+      $(document).on("click", ".single-project__add-media", function () {
+        $('.single-project__media-upload').toggleClass('hidden');
+        $(this).toggleClass('active');
+      });
+
+      $(document).on("focus", "input#title", function () {
+        $('a#title_save').removeClass('hidden');
+      });
+      $(document).on("focus", "input#description", function () {
+        $('a#description_save').removeClass('hidden');
+      });
+
+      $(document).on("click", ".single-project__add-bg-doc", function () {
+        $('.single-project__documents input#id_doc').trigger('click');
+      });
+
+      $(document).on("change", "input#id_doc", function () {
+        $(this).parents("form").submit();
+      });
+
+      var delete_form = $('#delete-form');
+      $(document).on("click", ".single-project__button-delete", function () {
+      vexDelete = vex.open({
+        content: delete_form.clone(),
+        contentClassName: 'vex-content vex-content-large',
+      });
+      });
+
+      $(document).on("click", ".dashboard__formbutton-refresh", function () {
+        vexRefresh = vex.open({
+          content: $('#xls-update').clone(),
+          contentClassName: 'vex-content'
+        });
+      });
+
+      $(document).click(function(event) {
+          if(!$(event.target).closest('.dashboard__submissions').length) {
+            if($('.dashboard__download__drop').is(":visible")) {
+              $('.dashboard__download__drop').addClass('hidden');
+              $('.dashboard__button-download-data').removeClass('active');
+            }
+          }
+
+          if(!$(event.target).closest('.dashboard__form-contents').length) {
+            if($('.dashboard__form-drop').is(":visible")) {
+              $('.dashboard__form-drop').addClass('hidden');
+              $('.dashboard__formbutton-download').removeClass('active');
+            }
+          }
+
+          if(!$(event.target).closest('.sub-header-bar').length) {
+            if($('.single-project__settings').is(":visible")) {
+              $('.single-project__settings').addClass('hidden');
+              $('.single-project__toggle-settings').removeClass('active');
+              $.cookie('settingsBoxOpen', false);
+            }
+          }
+      });
+
+      if ($.cookie('settingsBoxOpen') == 'true') {
+        $('.single-project__settings').removeClass('hidden');
+        $('.single-project__toggle-settings').addClass('active');
+      }
+
+      // question mark poshytip effect
+      $('.poshytip').poshytip({
+          className: 'tip__bottomarrow',
+          showTimeout: 1,
+          alignTo: 'target',
+          alignX: 'right',
+          alignY: 'top',
+          offsetX: -60,
+          offsetY: -5,
+          liveEvents: true
+      });
+
+      // smaller parent poshytip
+      $('.poshytip-small').poshytip({
+          className: 'tip__bottomarrow multiline',
+          showTimeout: 1,
+          alignTo: 'target',
+          alignX: 'right',
+          alignY: 'top',
+          offsetX: -25,
+          offsetY: -5,
+          liveEvents: true
+      });
+
+    });
+    </script>
+    <!-- END NEW SANDBOX JQUERY CALLS -->
+
+
+
+    
+
+    
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-26003863-7', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+    
+    
+
+  
+  
+
+</body></html>
+{% endblock %}
