@@ -59,14 +59,17 @@
           </ul>
           {% else %}
           <ul class="nav">
-            <!-- <li class="active"><a href="#overview">Overview</a></li> -->
+            <!-- <li class="active"><a href="#overview">Overview</a></li> 
             <li><a href="{% url "onadata.apps.main.views.form_gallery" %}">{% trans "Forms" %}</a></li>
-            <li><a href="{% url "onadata.apps.main.views.form_gallery2" %}">{% trans "Forms2" %}</a></li>
+            -->
+            <li><a href="{% url "onadata.apps.main.views.form_gallery2" %}">{% trans "Projects" %}</a></li>
+            <!--  
               {% if user.is_superuser or user.is_staff %}
-            <li><a href="{% url "onadata.apps.main.views.members_list" %}">{% trans "People" %}</a></li>
+            <li><a href="{% url "onadata.apps.main.views.members_list" %}">{% trans "Users" %}</a></li>
               {% endif %}
+              -->
             <!-- <li><a href="/resources/">{% trans "Resources" %}</a></li> -->
-            <li><a href="{% url "onadata.apps.main.views.syntax" %}">{% trans "Syntax" %}</a></li>
+            <li><a href="{% url "onadata.apps.main.views.syntax" %}">{% trans "Users" %}</a></li>
             <li><a href="{% url "onadata.apps.main.views.support" %}">{% trans "Support" %}</a></li>
           </ul>
           <ul class="nav pull-right">
@@ -78,6 +81,7 @@
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
+              	<li><a href="{% url "onadata.apps.main.views.activity" user.username %}"><i class="icon-eye-open"></i> {% trans "Manage Users" %}</a></li>
                 <li><a href="{% url "onadata.apps.main.views.public_profile" user.username %}"><i class="icon-user"></i> {% trans "Public profile" %}</a></li>
                 <li><a href="{% url "onadata.apps.main.views.profile_settings" user.username %}"><i class="icon-cog"></i> {% trans "Settings" %}</a></li>
                 <li><a href="{% url "onadata.apps.main.views.activity" user.username %}"><i class="icon-eye-open"></i> {% trans "Account Activity" %}</a></li>

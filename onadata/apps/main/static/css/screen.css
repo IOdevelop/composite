@@ -5,6 +5,7 @@ This is for all the extra things it needs beyond what bootstrap provides.
 */
 body {
   font-family: Helvetica;
+  
 }
 .clearfix {
   *zoom: 1;

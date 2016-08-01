@@ -2,6 +2,241 @@
 {% load humanize %}
 {% block content %}
 {% load i18n %}
+<!--  
+<link href="{{STATIC_URL}}css/iphone-btn-style.css" rel="stylesheet"/>
+
+
+    <link href="{{STATIC_URL}}project/bootstrap.min.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}project/screen.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}project/ona-screen-overrides.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}project/font-awesome.min.css" rel="stylesheet">
+
+	  <link href="{{STATIC_URL}}project/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <link href="{{STATIC_URL}}project/kobo-branding.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}project/published_forms.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}project/data_pages.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}project/vex.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}project/vex-theme-kobo.css" rel="stylesheet">
+
+    <link href="{{STATIC_URL}}project/footable.css" rel="stylesheet">
+    
+
+  <link href="{{STATIC_URL}}project/ios-switches.css" rel="stylesheet">
+  <link href="{{STATIC_URL}}project/kobo-single-project.css" rel="stylesheet">
+
+
+
+
+
+
+
+<div class="sub-header-bar">
+    <div class="container__wide">
+      <a class="single-project__toggle-settings"><i class="fa fa-cog"></i> Project Settings</a>
+      <div class="single-project__settings hidden">
+        <div class="settings__left">
+          <div class="settings__general">
+            
+            <h2 class="settings__group-label">
+              Form Settings
+            </h2>
+
+            <div class="settings__form-item">
+              <label class="settings__form-label">
+                Accept Submissions
+              </label>
+              <label><input id="active-form" type="checkbox" class="ios-switch" checked="" data-url="/butagreeza/forms/tutorial/edit"><div class="switch"></div></label>
+            </div>
+
+            <div class="settings__form-item">
+              <label class="settings__form-label">Existing Form Files</label>
+              <ul class="settings__files">
+                
+              </ul>
+
+              
+              <button class="single-project__button single-project__add-media">+ Add Document</button>
+
+              <form action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/edit" method="post" enctype="multipart/form-data" class="single-project__media-upload hidden">
+                  <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+                  <ul class="nav nav-tabs">
+                      <li class="active"><a href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial#media_upload" data-toggle="tab">Media Upload</a></li>
+                      <li><a href="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial#media_url_add" data-toggle="tab">Media URL</a></li>
+                  </ul>
+                  <div class="tab-content">
+                      <div class="tab-pane active" id="media_upload">
+                          <input type="file" multiple="" name="media" id="id_media">
+                          <input type="submit" class="single-project__button" value="Upload">
+                      </div>
+                      <div class="tab-pane" id="media_url_add">
+                          <label for="id_media">Media url:</label>
+                          <input type="text" name="media_url" id="id_media_url">
+                          <input type="submit" class="single-project__button" value="Save Media URL">
+                      </div>
+                  </div>
+              </form>
+              
+            </div>
+
+          </div>  
+
+          <div class="settings__delete-project">
+            <h2 class="settings__group-label">
+              Delete project with all data and its form
+            </h2>
+            <button data-backdrop="true" data-keyboard="true" class="single-project__button single-project__button-delete">
+                Delete
+            </button>
+
+          </div>
+
+          
+          <div class="settings__rest-services">
+              <h2 class="settings__group-label">Rest Services</h2>
+              <div id="restservice_tab">
+
+    <div id="addserviceformstatus"></div>
+    <div id="addserviceform-container">
+    <form name="addserviceform" id="addserviceform" action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/addservice" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+    <div class="tab-content bordered-side">
+        <div class="tab-pane active" id="upload">
+            <table class="narrow-labels">
+                <tbody><tr><th><label for="id_service_name">Service Name:</label></th><td><select id="id_service_name" maxlength="50" name="service_name">
+<option value="f2dhis2">f2dhis2</option>
+<option value="generic_json">JSON POST</option>
+<option value="generic_xml">XML POST</option>
+<option value="bamboo">bamboo</option>
+</select></td></tr>
+<tr><th><label for="id_service_url">Service URL:</label></th><td><input id="id_service_url" name="service_url" type="url"></td></tr>
+            </tbody></table>
+        </div>
+    </div>
+    <div class="form-actions bordered-side bordered-bottom nomargintop">
+        <input type="submit" class="btn large btn-primary" value="Add service" data-original-title="" title="">
+    </div>
+    </form>
+    <ol id="restservice_list">
+        
+    </ol>
+    </div>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript">
+    $(document).ready(function(){
+        var attach_delete = function(){
+            var el = $(this);
+            $.post(el.data('url'), "service-id=" + el.data('id'), function(data){
+                el.parent().remove();
+            });
+            return false;
+        };
+
+        $('a.restserviceitem').click(attach_delete);
+        $(document).on('submit', '#addserviceform', function(evt){
+            evt.preventDefault();
+            $.post(this.action, $(this).serialize(), function(data){
+                try{
+                    var rs = $.parseJSON(data);
+                    if (rs.status){
+                        if(rs.status == 'success'){
+                            $("#addserviceform").each(function(){
+                                this.reset();
+                            });
+                            if(rs.restservice){
+                                $("#restservice_list").append(rs.restservice);
+                                $("#restservice_list a.restserviceitem").click(attach_delete);
+                            }
+                        }
+                        $('#addserviceformstatus').html(rs.message);
+                    }
+
+                }catch (e){
+                }
+            });
+            return false;
+        });
+    });
+    </script>
+
+</div>
+          </div>
+          
+
+        </div>
+
+        <div class="settings__right">
+          <h2 class="settings__group-label">
+            How would you like to share your project
+          </h2>
+
+          <div class="settings__form-item">
+            <label class="settings__form-label">
+              Share Project Publicly
+            </label>
+            <label>
+              <input id="form-shared" type="checkbox" class="ios-switch" data-url="/butagreeza/forms/tutorial/edit">
+              <div title="Allow anyone from the web to view this page." class="poshytip switch"></div>
+            </label>
+          </div>
+
+          <div class="settings__form-item">
+            <label class="settings__form-label">
+              Share Data Publicly
+            </label>
+            <label>
+              <input id="data-shared" type="checkbox" class="ios-switch" data-url="/butagreeza/forms/tutorial/edit">
+              <div title="Allow anyone from the web to inspect this project’s data." class="poshytip switch"></div>
+            </label>
+          </div>
+
+          <div class="settings__form-item">
+            <label class="settings__form-label">
+              Share project with other users
+            </label>
+            
+            Sharing by link is <strong>off</strong>
+            
+            
+            <form action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/perms" method="post">
+                <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+                <input type="hidden" name="perm_type" value="link">
+                <input type="hidden" name="for_user" value="toggle">
+                <input type="submit" class="single-project__button" value="Turn on">
+            </form>
+            
+            <ul>
+                
+                <li>butagreeza: Can Edit | Can View | Can submit to</li>
+                
+            </ul>
+            
+            <form action="http://kc.humanitarianresponse.info/butagreeza/forms/tutorial/perms" method="post">
+                <input type="hidden" name="csrfmiddlewaretoken" value="bO7TqWmBP2BSrYSJOWbfixF0cZIu5zFi">
+                <table class="narrow-labels">
+                <tbody><tr><th><label for="autocomplete">For user:</label></th><td><input autocomplete="off" data-provide="typeahead" id="autocomplete" name="for_user" type="text"></td></tr>
+<tr><th><label for="id_perm_type">Perm type:</label></th><td><select id="id_perm_type" name="perm_type">
+<option value="view">Can view</option>
+<option value="edit">Can edit</option>
+<option value="report">Can submit to</option>
+<option value="remove">Remove permissions</option>
+</select></td></tr>
+                </tbody></table>
+                <input type="submit" class="single-project__button" value="Save Permissions">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+-->
+
+
+
+
+
+
 
   <section id="profile">
     <div class="page-header">

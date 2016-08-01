@@ -13,26 +13,43 @@
   <table id="forms-table" class="table table-bordered table-striped">
     <thead>
       <tr>
+      <!--  
         <th>{% trans "Created by" %}</th>
+        -->
         <th>{% trans "Project Name" %}</th>
+        <th>{% trans "Status" %}</th>
         <th>{% trans "Submissions" %}</th>
         <th>{% trans "Date Created" %}</th>
         <th>{% trans "Last Modified" %}</th>
+        <!--  
         <th>{% trans "Export XLSForm" %}</th>
+        -->
       </tr>
     </thead>
     <tbody>
       {% for data_dictionary in shared_forms %}
       <tr>
+      <!--
         <td>
+         
           <a href="/{{ data_dictionary.user.username }}">{{ data_dictionary.user.username }}</a>
+           
         </td>
+        -->
         <td><a href="{% url "onadata.apps.main.views.show" data_dictionary.user.username data_dictionary.id_string %}">{{ data_dictionary.title }}</a>
         </td>
-        
+        <td>
+        {% if data_dictionary.downloadable %}
+        <p>Active</p>
+        {% endif %}
+        {% if not data_dictionary.downloadable %}
+        <p>Inactive</p>
+        {% endif %}
+        </td>
         <td>{{ data_dictionary.num_of_submissions }}</td>
         <td>{{ data_dictionary.date_created }}</td>
         <td>{{ data_dictionary.date_modified }}</td>
+        <!--  
         <td>
           {% if data_dictionary.xls %}
             <a href="{% url "download_xlsform" data_dictionary.user.username data_dictionary.id_string %}" class="btn btn-small btn-success">{% trans "Excel" %}</a>
@@ -44,6 +61,7 @@
             {% endif %}
           {% endif %}
         </td>
+        -->
       </tr>
       {% endfor %}
     </tbody>
@@ -69,11 +87,11 @@
         } );
 
 	  $('#forms-table').dataTable({
-                  "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
+                  "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span'i><'span6'p>>",
 	          "bPaginate" : true,
                   "sPaginationType": "bootstrap",// "iDisplayLength": 4,
                   "bSort": true,
-                  "oLanguage": {"sSearch": "Search:"},
+                  "oLanguage": {"sSearch": "Search Projects:"},
                   "oSearch": {"sSearch": ""},
       });
       $('#forms-table_filter').addClass('row');

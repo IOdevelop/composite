@@ -7,13 +7,15 @@
 <section id="profile">
   <div class="row">
     <div class="span5">
-        <h1>{% blocktrans %}Publish a Form <small>Upload XLSForm</small>{% endblocktrans %}</h1>
+        <h1>{% blocktrans %}Create a new Project. <small>Upload Questionnaire to create a project.</small>{% endblocktrans %}</h1>
         {% url "tutorial" as tutorial_url %}
-        {% blocktrans %}For a quick introduction on how to publish a form try do download <a href="/examples/forms/tutorial/form.xls">tutorial.xls</a> and publish it.{% endblocktrans %}
+        For a quick introduction on how to create a Questionnaire contact our <a href="mailto:hvsaidu@gmail.com">support team</a> or visit our <a href="{% url "onadata.apps.main.views.support" %}">{% trans "support page" %}</a>.
         <br/>
         <br/>
+        <!--  
         {% url "syntax" as syntax_url %}
         {% blocktrans %}Learn about the XLSForm syntax <a href="{{ syntax_url }}">here</a> along with more <a href="/examples/">form examples</a>.{% endblocktrans %}
+        -->
         <br/>
         <br/>
         <form action="." method="post" enctype="multipart/form-data">
@@ -42,7 +44,7 @@
             </div>
             <div style='float:middle;'>
 	        <div class="form-actions bordered-side bordered-bottom nomargintop">
-                <input type="submit" class="btn large btn-primary" value="{% trans 'Publish' %}" />
+                <input type="submit" class="btn large btn-primary" value="{% trans 'Create Project' %}" />
             </div>
             </div>
         </form>
@@ -50,7 +52,12 @@
     <div class="span1">
         &nbsp;
     </div>
-    <div class="span6 profile">
+    
+    
+        
+        <img src="{{STATIC_URL}}images/form.png" alt='Collect' />
+        <!--  
+        <div class="span profile">
         <div class="bordered">
         <div class="row">
         <div class="span1">
@@ -94,15 +101,20 @@
         </div>
         </div>
     </div>
+        -->
+
 </div>
 </section>
 {% include "published_surveys.html" %}
 <p>
 {% blocktrans with url=url %}
-The url "of" this web application <strong>{{ url }}</strong>
-must be given to ODK Collect before it will get forms from and
-submit data to ona. In Collect's Main Menu, press the Menu
+The url of this web application <strong>{{ url }}</strong>
+must be given to <strong>Data Collect App </strong> before it will get forms from and
+submit data to Data Toolbox. In Collect's Main Menu, press the Menu
 button. Select Server Preferences, then Server. Enter
 <strong>{{ url }}</strong> as the server. {% endblocktrans %}
 </p>
 {% endblock %}
+
+
+
