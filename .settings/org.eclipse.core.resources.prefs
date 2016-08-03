@@ -5,3 +5,5 @@ encoding//onadata/apps/logger/management/commands/export_xforms_and_instances.py
 encoding//onadata/apps/logger/management/commands/import_instances.py=utf-8
 encoding//onadata/apps/survey_report/views.py=utf-8
 encoding//onadata/settings/common.py=utf-8
+encoding//script/i18ntool.py=utf-8
+encoding/manage.py=utf-8
