@@ -1,0 +1,8 @@
+# formpack exports
+-e git+https://github.com/kobotoolbox/formpack.git#egg=formpack
+-e git+https://github.com/kobotoolbox/pyxform.git#egg=pyxform-dev
+-e git+https://github.com/jnm/django-digest#egg=django-digest
+-e git+https://github.com/onaio/python-json2xlsclient.git#egg=j2xclient
+-e git+https://github.com/jbalogh/django-nose.git#egg=django-nose
+django-pure-pagination==0.3.0
+path.py==8.1.2

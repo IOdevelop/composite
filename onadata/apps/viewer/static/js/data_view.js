@@ -193,7 +193,7 @@
                 this.$el.prepend(filter.render().$el);
 
                 // Add some space to the filter and move it to the right
-                filter.$el.css({float: "right", margin: "20px"});
+                filter.$el.css({float: "right", margin: "10px"});
 
                 // catch the `switched` event
                 dataLangSwitcher.on('switch', function (language) {
