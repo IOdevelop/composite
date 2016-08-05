@@ -155,121 +155,13 @@
             
            -->
         </h3>
+
+        <h4>{% trans "Submissions:" %} {{ xform.submission_count|intcomma }}</h4>
         {% if xform.shared_data or can_view %}
         {% if not xform.encrypted and xform.submission_count > 0 %}
         <br>
-        <div class="btn-toolbar" style="margin-bottom: 9px">
-          <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv' %}" rel="tooltip" data-original-title="{% trans 'csv exports' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "csv" %}</font></a>
-            <button class="btn dropdown-toggle" data-toggle="dropdown">
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv' %}"/>
-              </li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv_zip' %}" rel="tooltip" data-original-title="{% trans 'csv zip exports' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "csv zip" %}</font></a>
-            <button class="btn dropdown-toggle" data-toggle="dropdown">
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv_zip' %}"/>
-              </li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'sav_zip' %}" rel="tooltip" data-original-title="{% trans 'SPSS data files zip exports' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "sav zip" %}</font></a>
-            <button class="btn dropdown-toggle" data-toggle="dropdown">
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'sav_zip' %}"/>
-              </li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'xls' %}" rel="tooltip" data-original-title="{% trans 'xls exports' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "xls" %}</font></a>
-            <button class="btn dropdown-toggle" data-toggle="dropdown">
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'xls' %}"/>
-              </li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'kml'%}" rel="tooltip" data-original-title="{% trans 'Export to kml File (Google Earth)' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "kml" %}</font></a>
-            <button class="btn dropdown-toggle" data-toggle="dropdown">
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'kml' %}"/>
-              </li>
-            </ul>
-          </div>
-
-          <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'zip' %}" rel="tooltip" data-original-title="{% trans 'Export a zip folder of attachments' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "zip" %}</font></a>
-            <button class="btn dropdown-toggle" data-toggle="dropdown">
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'zip' %}"/>
-              </li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'gdoc' %}" rel="tooltip" data-original-title="{% trans 'Export to google docs' %}" target="_blank"><i class="icon-download-alt"></i> <font color=#000>{% trans "gdocs" %}</font></a>
-            <button class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li>
-                    <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'gdoc' %}"/>
-                </li>
-            </ul>
-          </div>
-          <br/>
-          <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'external' %}" rel="tooltip" data-original-title="{% trans 'xls reports' %}" target="_blank"><i class="icon-download-alt"></i> <font color=#000>{% trans "xls reports" %}</font></a>
-            <button class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li>
-                    <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'external' %}"/>
-                </li>
-            </ul>
-          </div>
-        </div>
-        <h4>{% trans "Submissions:" %} {{ xform.submission_count|intcomma }}</h4>
-        
-        <!-- LICENCE COMMENTED OUT 
-        <br>
-        <p>
-            {% trans "License:" %}
-            {% if can_edit %}
-                {% for field in data_license_form %}
-                    {{ field }}
-                {% endfor %}
-                <a id="data-license_edit" data-id="data-license" href="" class="btn btn-small bind-edit">{% trans "edit" %}</a>
-                <a id="data-license_save" data-id="data-license" style="display:none" href="" class="btn btn-small btn-primary bind-save" data-url="{% url "onadata.apps.main.views.edit" content_user.username xform.id_string %}">{% trans "save" %}</a>
-            {% else %}
-                {{ data_license|default:'No license' }}
-            {% endif %}
-        </p>
-        <p><a id="data-license_info" style="display:none" href="">{% trans "License information" %}</a></p>
-        -->
-        
-	    <div class="btn-group" style="margin-bottom: 9px">
+        		<h5>View Data</h5>
+        	    <div class="btn-group" style="margin-bottom: 9px">
 				{% if xform.has_instances_with_geopoints %}
 			<a class="btn btn-info" rel="tooltip" title="{% trans 'View Map' %}" href="{% url "onadata.apps.viewer.views.map_view" content_user.username xform.id_string %}">
 				<i class="icon-map-marker icon-white"></i> {% trans "Map" %}
@@ -288,6 +180,114 @@
                 <i class="icon-bar-chart icon-white"></i> {% trans "Statistics" %}
             </a>
         </div>
+        <br>
+        		<h5>Download Data</h5>
+        
+        <div class="btn-toolbar" style="margin-bottom: 9px">
+          <div class="btn-group">
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv' %}" rel="tooltip" data-original-title="{% trans 'csv exports' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "csv" %}</font></a>
+
+            <ul class="dropdown-menu">
+              <li>
+                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv' %}"/>
+              </li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv_zip' %}" rel="tooltip" data-original-title="{% trans 'csv zip exports' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "csv zip" %}</font></a>
+            
+            <ul class="dropdown-menu">
+              <li>
+                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv_zip' %}"/>
+              </li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'sav_zip' %}" rel="tooltip" data-original-title="{% trans 'SPSS data files zip exports' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "sav zip" %}</font></a>
+            
+            <ul class="dropdown-menu">
+              <li>
+                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'sav_zip' %}"/>
+              </li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'xls' %}" rel="tooltip" data-original-title="{% trans 'xls exports' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "xls" %}</font></a>
+            
+            <ul class="dropdown-menu">
+              <li>
+                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'xls' %}"/>
+              </li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'kml'%}" rel="tooltip" data-original-title="{% trans 'Export to kml File (Google Earth)' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "kml" %}</font></a>
+            
+            <ul class="dropdown-menu">
+              <li>
+                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'kml' %}"/>
+              </li>
+            </ul>
+          </div>
+
+          <div class="btn-group">
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'zip' %}" rel="tooltip" data-original-title="{% trans 'Export a zip folder of attachments' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "zip" %}</font></a>
+            <!--  
+            <button class="btn dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+            </button>
+            -->
+            <ul class="dropdown-menu">
+              <li>
+                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'zip' %}"/>
+              </li>
+            </ul>
+          </div>
+          <!--  
+          <div class="btn-group">
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'gdoc' %}" rel="tooltip" data-original-title="{% trans 'Export to google docs' %}" target="_blank"><i class="icon-download-alt"></i> <font color=#000>{% trans "gdocs" %}</font></a>
+            <button class="btn dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'gdoc' %}"/>
+                </li>
+            </ul>
+            -->
+                      <br/>
+          <div class="btn-group">
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'external' %}" rel="tooltip" data-original-title="{% trans 'xls reports' %}" target="_blank"><i class="icon-download-alt"></i> <font color=#000>{% trans "xls reports" %}</font></a>
+            
+            <ul class="dropdown-menu">
+                <li>
+                    <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'external' %}"/>
+                </li>
+            </ul>
+          </div>
+        </div>
+        
+          </div>
+
+        
+        <!-- LICENCE COMMENTED OUT 
+        <br>
+        <p>
+            {% trans "License:" %}
+            {% if can_edit %}
+                {% for field in data_license_form %}
+                    {{ field }}
+                {% endfor %}
+                <a id="data-license_edit" data-id="data-license" href="" class="btn btn-small bind-edit">{% trans "edit" %}</a>
+                <a id="data-license_save" data-id="data-license" style="display:none" href="" class="btn btn-small btn-primary bind-save" data-url="{% url "onadata.apps.main.views.edit" content_user.username xform.id_string %}">{% trans "save" %}</a>
+            {% else %}
+                {{ data_license|default:'No license' }}
+            {% endif %}
+        </p>
+        <p><a id="data-license_info" style="display:none" href="">{% trans "License information" %}</a></p>
+        -->
+        
+
         {% else %}
             {% if can_edit %}
 
