@@ -2,54 +2,84 @@
 {% load humanize %}
 {% block content %}
 {% load i18n %}
+
+
   <section id="profile">
+  <h1> PROJECT VIEW</h1>
     <div class="page-header">
-      <!-- <img src='{{ content_user.profile.gravatar }}' alt='gravatar' width='40' height='40' style='float:left; padding-right:10px;' /> -->
-    <div id="mfeedback">&nbsp;</div>
+<div style="width: 200px; float:left; height:100px;  margin:20px">
+	<h4>
+	Project Owner
+	</h4>
 	<h3>
-	  <div class='span2'>
-	  <!--  <img src='{{ content_user.profile.gravatar }}' alt='gravatar' width='20' height='20' />-->
-	  <a>{% trans "Owner:" %} </a> {{ content_user.username }}
-	  </div>
-	   </h3>
-	   <div class='clearfix'>
-                {% csrf_token %}
-                <input type="text" id="title"class="input-xxsmall present header" disabled="" rows="0" value="{{ xform.title }}" />
-                {% if can_edit %}
-                    <a id="title_edit" data-id="title" href="" class="btn small bind-edit">{% trans "edit" %}</a>
-                    <a id="title_save" data-id="title" style="display:none" href="" class="btn small btn-primary bind-save" data-url="{% url "onadata.apps.main.views.edit" content_user.username xform.id_string %}">{% trans "save" %}</a>
-                {% endif %}
-                
-            </div>
-           
-    </div>
-    <div class="row">
-      <div class="span8">
-        {% if can_edit %}
-            <h4>{% trans "Form ID:" %} {{ xform.id_string }}</h4>
-        {% endif %}
-        <h3>{% trans "Description" %}</h3>
-        <div class="clearfix">
+	{{ content_user.username }}
+	</h3>
+
+
+</div>
+<!--  
+<div style="width: 200px; float:left; height:100px;  margin:20px"><a>{% trans "Owner:" %} </a> {{ content_user.username }}</div>
+-->
+<div style="width: 200px; float:left; height:100px;  margin:20px">
+		<h4>
+	{% trans "Project Name" %}
+	</h4>
+	{% csrf_token %}
+	<input type="text" id="title" class="input-xxsmall present" disabled="" rows="0" value="{{ xform.title }}" />
+	{% if can_edit %}
+	<a id="title_edit" data-id="title" href="" class="btn small bind-edit">{% trans "edit" %}</a>
+	<a id="title_save" data-id="title" style="display:none" href="" class="btn small btn-primary bind-save" data-url="{% url "onadata.apps.main.views.edit" content_user.username xform.id_string %}">{% trans "save" %}</a>
+	{% endif %}
+</div>
+
+
+
+<div style="width: 100px; float:left; height:100px;  margin:20px">
+	<div class="clearfix">
+	<h4>{% trans "Description" %}</h4>
             <div class="input">
-            <form>
                 {% csrf_token %}
-                <textarea id="description" class="input-xxlarge present" disabled="" rows="3" name="textarea">{% if xform.description %}{{ xform.description }}{% else %}{% trans "None" %}{% endif %}</textarea>
+                <textarea id="description" class="input-xxsmall present" disabled="" rows="1" name="textarea">{% if xform.description %}{{ xform.description }}{% else %}{% trans "None" %}{% endif %}</textarea>
                 {% if can_edit %}
                     <a id="description_edit" data-id="description" href="" class="btn small bind-edit">{% trans "edit" %}</a>
                     <a id="description_save" data-id="description" style="display:none" href="" class="btn small btn-primary bind-save" data-url="{% url "onadata.apps.main.views.edit" content_user.username xform.id_string %}">{% trans "save" %}</a>
                 {% endif %}
-            </form>
+                
             </div>
         </div>
+	
+	
+</div>
+    
+      <!-- <img src='{{ content_user.profile.gravatar }}' alt='gravatar' width='40' height='40' style='float:left; padding-right:10px;' /> -->
+    <div id="mfeedback">&nbsp;</div>
+    <!--
+	<h3>
+	
+	  <div class='span2'>
+	    <img src='{{ content_user.profile.gravatar }}' alt='gravatar' width='20' height='20' />
+	  
+	  </div>
+	   </h3>
+-->
+           
+    </div>
+    <div class="row">
+      <div class="span8">
+        
+        
+      <!--   
       <div class="bordered">
         <h3>
-            {% trans "XLSForm" %}
+            {% trans "Questionnaire" %}
+          
             <span id="form-shared-public" class="label label-info">{% trans "PUBLIC" %}</span>
             <span id="form-shared-private" class="label label-warning">{% trans "PRIVATE" %}</span>
             <span id="form-encrypted" class="label label-important icon-lock label-encrypted">&nbsp;&nbsp;{% trans "ENCRYPTED" %}</span>
+        	
         </h3>
-        <br/>
-        <div class="btn-toolbar" style="margin-bottom: 9px">
+        
+        <div class="btn-toolbar" style="margin-bottom: 0px">
           <div class="btn-group">
             <a class="btn btn-success" href="{% url "download_xlsform" content_user.username xform.id_string %}"><i class="icon-th icon-white"></i><font color=#FFF> {% trans "XLSForm" %}</font></a>
             <button class="btn dropdown-toggle btn-success" data-toggle="dropdown">
@@ -57,7 +87,10 @@
             </button>
             <ul class="dropdown-menu">
               <li>
+              
+              
                 <input class="input-xxlarge" type="text" size="16" value="{{ base_url }}{% url "download_xlsform" content_user.username xform.id_string %}"/>
+              
               </li>
             </ul>
           </div>
@@ -110,12 +143,17 @@
         </ul>
       </div>
       <br/>
+      
+      -->
       <div class="clearfix bordered">
         <h3>
-            {% trans "Form Data" %}
+            {% trans "Project Data" %}
+            <!--  PUBLIC PRIVATE COMMENTED OUT
             <span id="data-shared-public" class="label label-info">{% trans "PUBLIC" %}</span>
             <span id="data-shared-private" class="label label-warning">{% trans "PRIVATE" %}</span>
             <span id="data-encrypted" class="label label-important icon-lock label-encrypted">&nbsp;&nbsp;{% trans "ENCRYPTED" %}</span>
+            
+           -->
         </h3>
         {% if xform.shared_data or can_view %}
         {% if not xform.encrypted and xform.submission_count > 0 %}
@@ -213,6 +251,8 @@
           </div>
         </div>
         <h4>{% trans "Submissions:" %} {{ xform.submission_count|intcomma }}</h4>
+        
+        <!-- LICENCE COMMENTED OUT 
         <br>
         <p>
             {% trans "License:" %}
@@ -227,6 +267,8 @@
             {% endif %}
         </p>
         <p><a id="data-license_info" style="display:none" href="">{% trans "License information" %}</a></p>
+        -->
+        
 	    <div class="btn-group" style="margin-bottom: 9px">
 				{% if xform.has_instances_with_geopoints %}
 			<a class="btn btn-info" rel="tooltip" title="{% trans 'View Map' %}" href="{% url "onadata.apps.viewer.views.map_view" content_user.username xform.id_string %}">
@@ -254,9 +296,10 @@
             {% endif %}
 		{% endif %}
 		{% endif %}
+		<!--  
 
           <div class="btn-toolbar" style="margin-bottom: 9px">
-              <span><!-- break the .btn-group + .btn-group rule that shows a margin before this group --></span>
+              <span><!-- break the .btn-group + .btn-group rule that shows a margin before this group --</span>
 
               <div class="btn-group" style="margin-bottom: 9px">
                   {% if can_edit %}
@@ -290,8 +333,12 @@
         <br>
       <div class="span4">
       </div>
+      -->
     </div>
       <br/>
+      
+      
+      <!--  
         <div class="clearfix bordered">
                 <h3 data-toggle="collapse" class="toggler" data-target="#source_tab">{% trans "Source" %}</h3>
                 <div id='source_tab' class="collapse">
@@ -531,26 +578,30 @@
             </div>
         </div>
       </div>
+      
+      -->
       <div class="span4">
         {% if is_owner %}
         <h3>{% trans "Settings" %}</h3>
         <div class="clearfix">
+        <!--  
           <div class="input">
           <label>{% trans "Form Shared" %}&nbsp;</label>
             <input id="form-shared" type="checkbox"{% if xform.shared %} checked=""{% endif %} data-url="{% url "onadata.apps.main.views.edit" content_user.username xform.id_string %}" />
           </div>
-          <br/>
+          
           <label>{% trans "Data Shared" %}&nbsp;</label>
           <div class="input">
             <input id="data-shared" type="checkbox"{% if xform.shared_data %} checked=""{% endif %} data-url="{% url "onadata.apps.main.views.edit" content_user.username xform.id_string %}" />
           </div>
           <br/>
-          <label>{% trans "Form Active" %}&nbsp;</label>
+          -->
+          <label>{% trans "Project Active" %}&nbsp;</label>
           <div class="input">
             <input id="active-form" type="checkbox"{% if xform.downloadable %} checked=""{% endif %} data-url="{% url "onadata.apps.main.views.edit" content_user.username xform.id_string %}" />
           </div>
-          <br/>
-          <label>{% trans "Delete Form" %}&nbsp;</label>
+          
+          <label>{% trans "Delete Project" %}&nbsp;</label>
         <div class="input">
           <!-- DELETE -->
           <div id="delete-{{ xform.id_string }}" class="modal hide fade">
@@ -561,7 +612,7 @@
                       <h3>{% trans "Delete Confirmation" %}</h3>
                   </div>
                   <div class="modal-body">
-                      <p>{% blocktrans with title=xform.title nb_sub=xform.submission_count|intcomma %}Are you sure you want to delete the form '{{ title }}'? This form has <strong>{{ nb_sub }}</strong> submissions associated with it that will also be deleted. If you are unsure about deleting this form press 'Cancel' and consider 'Archiving' the form instead.{% endblocktrans %}</p>
+                      <p>{% blocktrans with title=xform.title nb_sub=xform.submission_count|intcomma %}Are you sure you want to delete the project '{{ title }}'? This project has <strong>{{ nb_sub }}</strong> submissions associated with it that will also be deleted. If you are unsure about deleting this project press 'Cancel' and consider 'Archiving' the project instead.{% endblocktrans %}</p>
                   </div>
                   <div class="modal-footer">
                       <button class="btn btn-primary form-submit">Delete</button>
@@ -575,6 +626,7 @@
         </div>
         </div>
         <br/>
+        <!--  
         <div>
             <h3>{% trans "bamboo" %}</h3>
             {% if xform.bamboo_dataset %}
@@ -595,6 +647,7 @@
             {% endif %}
         </div>
         <br />
+        -->
         <div>
             <h3>{% trans "Sharing" %}</h3>
             {% if public_link %}
