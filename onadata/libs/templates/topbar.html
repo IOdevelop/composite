@@ -15,7 +15,7 @@
           <ul class="nav">
             <li>&nbsp;</li>
             <li>
-                <img src='{{ profile.gravatar }}' alt='gravatar' width='30' height='30' />
+                <img src="{{STATIC_URL}}images/formhub_avatar.png" alt='icon' width='30' height='30' />
                 &nbsp;
                 &nbsp;
             </li>
@@ -75,7 +75,7 @@
           <ul class="nav pull-right">
             {% if user.is_authenticated %}
             <!-- <li><a id="new-form" href="#" rel="tooltip" title="{% trans "New Form" %}"><img src="{{ STATIC_URL }}images/upload-icon.png"></a></li> -->
-            <li><a href="/{{user.username}}">{{user.username}}</a></li>
+            <li><a >{{user.username}}</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <b class="caret"></b>
