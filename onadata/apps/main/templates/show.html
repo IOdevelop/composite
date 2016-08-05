@@ -164,20 +164,20 @@
         	    <div class="btn-group" style="margin-bottom: 9px">
 				{% if xform.has_instances_with_geopoints %}
 			<a class="btn btn-info" rel="tooltip" title="{% trans 'View Map' %}" href="{% url "onadata.apps.viewer.views.map_view" content_user.username xform.id_string %}">
-				<i class="icon-map-marker icon-white"></i> {% trans "Map" %}
+				<i></i> {% trans "Map" %}
 			</a>
 		        {% endif %}
             <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "View Photos" %}" href="{% url "onadata.apps.main.views.form_photos" content_user.username xform.id_string %}">
-              <i class="icon-camera icon-white"></i> {% trans "Photos" %}
+              <i></i> {% trans "Photos" %}
             </a>
             <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "View Submitted Data" %}" href="{% url "onadata.apps.viewer.views.data_view" content_user.username xform.id_string %}">
-                <i class="icon-th-list icon-white"></i> {% trans "View Data" %}
+                <i ></i> {% trans "View Data" %}
             </a>
             <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "Browse Data (One by One)" %}" href="{% url "onadata.apps.viewer.views.instance" content_user.username xform.id_string %}">
-                <i class="icon-list-alt icon-white"></i> {% trans "Browse Data" %}
+                <i></i> {% trans "Browse Data" %}
             </a>
             <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "View Statistics" %}" href="{% url "onadata.apps.survey_report.views.auto_report" content_user.username xform.id_string %}">
-                <i class="icon-bar-chart icon-white"></i> {% trans "Statistics" %}
+                <i ></i> {% trans "Statistics" %}<!--  class="icon-bar-chart icon-white"-->
             </a>
         </div>
         <br>
@@ -185,7 +185,7 @@
         
         <div class="btn-toolbar" style="margin-bottom: 9px">
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv' %}" rel="tooltip" data-original-title="{% trans 'csv exports' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "csv" %}</font></a>
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv' %}" rel="tooltip" data-original-title="{% trans 'csv exports' %}"><font color=#000>{% trans "csv" %}</font></a>
 
             <ul class="dropdown-menu">
               <li>
@@ -194,7 +194,7 @@
             </ul>
           </div>
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv_zip' %}" rel="tooltip" data-original-title="{% trans 'csv zip exports' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "csv zip" %}</font></a>
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv_zip' %}" rel="tooltip" data-original-title="{% trans 'csv zip exports' %}"> <font color=#000>{% trans "csv zip" %}</font></a> <!-- <i class="icon-download-alt"></i> -->
             
             <ul class="dropdown-menu">
               <li>
@@ -203,7 +203,7 @@
             </ul>
           </div>
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'sav_zip' %}" rel="tooltip" data-original-title="{% trans 'SPSS data files zip exports' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "sav zip" %}</font></a>
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'sav_zip' %}" rel="tooltip" data-original-title="{% trans 'SPSS data files zip exports' %}"> <font color=#000>{% trans "sav zip" %}</font></a>
             
             <ul class="dropdown-menu">
               <li>
@@ -212,7 +212,7 @@
             </ul>
           </div>
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'xls' %}" rel="tooltip" data-original-title="{% trans 'xls exports' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "xls" %}</font></a>
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'xls' %}" rel="tooltip" data-original-title="{% trans 'xls exports' %}"> <font color=#000>{% trans "xls" %}</font></a>
             
             <ul class="dropdown-menu">
               <li>
@@ -221,7 +221,7 @@
             </ul>
           </div>
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'kml'%}" rel="tooltip" data-original-title="{% trans 'Export to kml File (Google Earth)' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "kml" %}</font></a>
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'kml'%}" rel="tooltip" data-original-title="{% trans 'Export to kml File (Google Earth)' %}"><font color=#000>{% trans "kml" %}</font></a>
             
             <ul class="dropdown-menu">
               <li>
@@ -231,7 +231,7 @@
           </div>
 
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'zip' %}" rel="tooltip" data-original-title="{% trans 'Export a zip folder of attachments' %}"><i class="icon-download-alt"></i> <font color=#000>{% trans "zip" %}</font></a>
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'zip' %}" rel="tooltip" data-original-title="{% trans 'Export a zip folder of attachments' %}"><font color=#000>{% trans "zip" %}</font></a>
             <!--  
             <button class="btn dropdown-toggle" data-toggle="dropdown">
               <span class="caret"></span>
@@ -257,7 +257,7 @@
             -->
                       <br/>
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'external' %}" rel="tooltip" data-original-title="{% trans 'xls reports' %}" target="_blank"><i class="icon-download-alt"></i> <font color=#000>{% trans "xls reports" %}</font></a>
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'external' %}" rel="tooltip" data-original-title="{% trans 'xls reports' %}" target="_blank"> <font color=#000>{% trans "xls reports" %}</font></a>
             
             <ul class="dropdown-menu">
                 <li>
