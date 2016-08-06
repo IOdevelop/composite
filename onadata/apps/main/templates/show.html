@@ -144,6 +144,11 @@
       </div>
       <br/>
       
+                  <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "Browse Data (One by One)" %}" href="{% url "onadata.apps.export.views.export_menu" content_user.username xform.id_string %}">
+                 {% trans "Down Data" %}
+            </a>
+      
+      
       -->
       <div class="clearfix bordered">
         <h3>
@@ -164,20 +169,22 @@
         	    <div class="btn-group" style="margin-bottom: 9px">
 				{% if xform.has_instances_with_geopoints %}
 			<a class="btn btn-info" rel="tooltip" title="{% trans 'View Map' %}" href="{% url "onadata.apps.viewer.views.map_view" content_user.username xform.id_string %}">
-				<i></i> {% trans "Map" %}
+				 {% trans "Map" %}
 			</a>
 		        {% endif %}
             <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "View Photos" %}" href="{% url "onadata.apps.main.views.form_photos" content_user.username xform.id_string %}">
-              <i></i> {% trans "Photos" %}
+               {% trans "Photos" %}
             </a>
             <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "View Submitted Data" %}" href="{% url "onadata.apps.viewer.views.data_view" content_user.username xform.id_string %}">
-                <i ></i> {% trans "View Data" %}
+                 {% trans "View Data" %}
             </a>
             <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "Browse Data (One by One)" %}" href="{% url "onadata.apps.viewer.views.instance" content_user.username xform.id_string %}">
-                <i></i> {% trans "Browse Data" %}
+                 {% trans "Browse Data" %}
             </a>
+            
+
             <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "View Statistics" %}" href="{% url "onadata.apps.survey_report.views.auto_report" content_user.username xform.id_string %}">
-                <i ></i> {% trans "Statistics" %}<!--  class="icon-bar-chart icon-white"-->
+                 {% trans "Statistics" %}<!--  <i></i>class="icon-bar-chart icon-white"-->
             </a>
         </div>
         <br>
@@ -185,7 +192,7 @@
         
         <div class="btn-toolbar" style="margin-bottom: 9px">
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv' %}" rel="tooltip" data-original-title="{% trans 'csv exports' %}"><font color=#000>{% trans "csv" %}</font></a>
+            <a class="btn" href="{% url "onadata.apps.export.views.export_menu" content_user.username xform.id_string %}" rel="tooltip" data-original-title="{% trans 'csv exports' %}"><font color=#000>{% trans "csv and xls (beta)" %}</font></a>
 
             <ul class="dropdown-menu">
               <li>
@@ -211,17 +218,9 @@
               </li>
             </ul>
           </div>
+
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'xls' %}" rel="tooltip" data-original-title="{% trans 'xls exports' %}"> <font color=#000>{% trans "xls" %}</font></a>
-            
-            <ul class="dropdown-menu">
-              <li>
-                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'xls' %}"/>
-              </li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'kml'%}" rel="tooltip" data-original-title="{% trans 'Export to kml File (Google Earth)' %}"><font color=#000>{% trans "kml" %}</font></a>
+            <a class="btn" href="{% url "onadata.apps.viewer.views.kml_export" content_user.username xform.id_string%}" rel="tooltip" data-original-title="{% trans 'Export to kml File (Google Earth)' %}"><font color=#000>{% trans "kml" %}</font></a>
             
             <ul class="dropdown-menu">
               <li>
