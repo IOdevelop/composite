@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load humanize %}
 {% load i18n %}
 
 {% block content %}
@@ -10,18 +9,8 @@
    <section id="profile">
      <div class="page-header">
        <h1>
-       
-         {% if is_owner and not profile.gravatar_exists %}
-             <a> 
-         {% endif %}
-         
-         <img src="{{STATIC_URL}}images/formhub_avatar.png" alt={{ profile.name }} width='5px' height='5px' />
-         {% if is_owner and not profile.gravatar_exists %}
-         <!--  
-            <span class="small-link">{% trans "change" %}</span>
-            -->
-            </a>
-         {% endif %}
+         <img src="{{STATIC_URL}}images/formhub_avatar.png" alt={{ profile.name }} width='60' height='60' />
+
          {{ content_user.username }}
          {% if profile.name %}
             <span class='pipe'>&nbsp;|&nbsp;</span><span class='name'>{{ profile.name }}</span>
@@ -55,7 +44,7 @@
        <div class="span4">
          <h2>
             <span class='right'>
-              {% blocktrans count num_forms=num_forms %}{{ num_forms }} <small>Projects</small>{% plural %}{{ num_forms }} <small>Projects</small>{% endblocktrans %}
+              {% blocktrans count num_forms=num_forms %}{{ num_forms }} <small>Shared Projects</small>{% plural %}{{ num_forms }} <small>Shared Projects</small>{% endblocktrans %}
             </span>
          </h2>
        </div>
@@ -64,7 +53,7 @@
 
      <div class="row">
        <div class="span12">
-	 <h3>{% blocktrans %}Current Projects & Projects Data <small>({{ num_forms }})</small>{% endblocktrans %}</h3>
+	 <h3>{% blocktrans %}Shared Projects & Public Data <small>({{ num_forms }})</small>{% endblocktrans %}</h3>
 	 {% if forms %}
 	 <table id="sharedforms-table" class="table table-bordered table-striped">
 	   <thead>
@@ -72,7 +61,7 @@
               <th>{% trans "Name" %}</th>
               <th>{% trans "Date Created" %}</th>
               <th>{% trans "Questionnaire" %}</th>
-              <th>{% trans "Submissions" %}</th>
+              <th>{% trans "Public Data" %}</th>
               <th>{% trans "Map" %}</th>
 	    </tr>
 	  </thead>
@@ -88,7 +77,7 @@
                 <td>
                     {% if form.shared %}
                     <a href="{% url "download_xlsform" content_user.username form.id_string %}">
-                        <button class="btn btn-small btn-success"><!--  <i class="icon-th icon-white"></i> -->{% trans "Download" %} </button>
+                        <button class="btn btn-small btn-success"><i class="icon-th icon-white"></i> {% trans "XLS" %}</button>
                     </a>
                     {% else %}
                         <span class="label label-warning">{% trans "PRIVATE" %}</span>
@@ -99,7 +88,7 @@
                 {% if form.submission_count %}
                 <div class="data-download">
                   <span class="vertical-middle">
-                    
+                    <i class="icon-download icon-large"></i>
                   </span>
                   <span class="vertical-middle">
                     <span class="download">{% trans "Download" %}</span>
