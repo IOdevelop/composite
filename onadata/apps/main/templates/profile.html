@@ -8,9 +8,10 @@
 
    <section id="profile">
      <div class="page-header">
+     <!--  
+     <img src="{{STATIC_URL}}images/formhub_avatar.png" alt={{ profile.name }} width='60' height='60' />
+       -->
        <h1>
-         <img src="{{STATIC_URL}}images/formhub_avatar.png" alt={{ profile.name }} width='60' height='60' />
-
          {{ content_user.username }}
          {% if profile.name %}
             <span class='pipe'>&nbsp;|&nbsp;</span><span class='name'>{{ profile.name }}</span>
