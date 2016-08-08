@@ -184,9 +184,12 @@
             
 
             <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "View Statistics" %}" href="{% url "onadata.apps.survey_report.views.auto_report" content_user.username xform.id_string %}">
-                 {% trans "Statistics" %}<!--  <i></i>class="icon-bar-chart icon-white"-->
+                 {% trans "Statistical Reports" %}<!--  <i></i>class="icon-bar-chart icon-white"-->
             </a>
-        </div>
+            <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "Custom Statistics" %}" href="{% url "onadata.apps.viewer.views.stats_tables" content_user.username xform.id_string %}">
+                 {% trans "Custom Statistics" %}<!--  <i></i>class="icon-bar-chart icon-white"-->
+            </a>
+        </div>        
         <br>
         		<h5>Download Data</h5>
         
@@ -210,7 +213,7 @@
             </ul>
           </div>
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'sav_zip' %}" rel="tooltip" data-original-title="{% trans 'SPSS data files zip exports' %}"> <font color=#000>{% trans "sav zip" %}</font></a>
+            <a class="btn" href="{% url "onadata.apps.viewer.views.stats_tables" content_user.username xform.id_string  %}" rel="tooltip" data-original-title="{% trans 'SPSS data files zip exports' %}"> <font color=#000>{% trans "sav zip" %}</font></a>
             
             <ul class="dropdown-menu">
               <li>
@@ -220,7 +223,7 @@
           </div>
 
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.kml_export" content_user.username xform.id_string%}" rel="tooltip" data-original-title="{% trans 'Export to kml File (Google Earth)' %}"><font color=#000>{% trans "kml" %}</font></a>
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'kml'%}" rel="tooltip" data-original-title="{% trans 'Export to kml File (Google Earth)' %}"><font color=#000>{% trans "kml" %}</font></a>
             
             <ul class="dropdown-menu">
               <li>
