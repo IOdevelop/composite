@@ -195,16 +195,12 @@
         
         <div class="btn-toolbar" style="margin-bottom: 9px">
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.export.views.export_menu" content_user.username xform.id_string %}" rel="tooltip" data-original-title="{% trans 'csv exports' %}"><font color=#000>{% trans "csv and xls (beta)" %}</font></a>
+            <a class="btn" href="{% url "csv_export" content_user.username xform.id_string %}" rel="tooltip" data-original-title="{% trans 'Export to csv file' %}"><font color=#000>{% trans "CSV Export" %}</font></a>
 
-            <ul class="dropdown-menu">
-              <li>
-                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv' %}"/>
-              </li>
-            </ul>
           </div>
+          <!-- 
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv_zip' %}" rel="tooltip" data-original-title="{% trans 'csv zip exports' %}"> <font color=#000>{% trans "csv zip" %}</font></a> <!-- <i class="icon-download-alt"></i> -->
+            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'csv_zip' %}" rel="tooltip" data-original-title="{% trans 'csv zip exports' %}"> <font color=#000>{% trans "csv zip" %}</font></a> <!-- <i class="icon-download-alt"></i> 
             
             <ul class="dropdown-menu">
               <li>
@@ -221,19 +217,15 @@
               </li>
             </ul>
           </div>
-
+--> 
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'kml'%}" rel="tooltip" data-original-title="{% trans 'Export to kml File (Google Earth)' %}"><font color=#000>{% trans "kml" %}</font></a>
+            <a class="btn" href="{% url "xls_export" content_user.username xform.id_string %}" rel="tooltip" data-original-title="{% trans 'Export to Excel File' %}"><font color=#000>{% trans "EXCEL Export" %}</font></a>
             
-            <ul class="dropdown-menu">
-              <li>
-                <input class="input-xxlarge" type="text" size="16" value="{{base_url}}{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'kml' %}"/>
-              </li>
-            </ul>
+
           </div>
 
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'zip' %}" rel="tooltip" data-original-title="{% trans 'Export a zip folder of attachments' %}"><font color=#000>{% trans "zip" %}</font></a>
+            <a class="btn" href="{% url "onadata.apps.viewer.views.kml_export" content_user.username xform.id_string %}" rel="tooltip" data-original-title="{% trans 'Export to kml File (Google Earth)' %}"><font color=#000>{% trans "KML Export" %}</font></a>
             <!--  
             <button class="btn dropdown-toggle" data-toggle="dropdown">
               <span class="caret"></span>
@@ -245,6 +237,16 @@
               </li>
             </ul>
           </div>
+          
+          <div class="btn-group">
+            <a class="btn" href="{% url "onadata.apps.export.views.export_menu" content_user.username xform.id_string %}" rel="tooltip" data-original-title="{% trans 'Do Advance Exports' %}"><font color=#000>{% trans "Advance Exports" %}</font></a>
+            <!--  
+            <button class="btn dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+            </button>
+            -->
+
+          </div>          
           <!--  
           <div class="btn-group">
             <a class="btn" href="{% url "onadata.apps.viewer.views.export_list" content_user.username xform.id_string 'gdoc' %}" rel="tooltip" data-original-title="{% trans 'Export to google docs' %}" target="_blank"><i class="icon-download-alt"></i> <font color=#000>{% trans "gdocs" %}</font></a>

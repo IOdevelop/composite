@@ -1,0 +1,11 @@
+name,age,picture,has_children,gps,_gps_latitude,_gps_longitude,_gps_altitude,_gps_precision,web_browsers/firefox,web_browsers/chrome,web_browsers/ie,web_browsers/safari,meta/instanceID,_uuid,_submission_time,_tags,_notes
+Njala university,68,1469293009646.jpg,1,n/a,n/a,n/a,n/a,n/a,True,True,True,False,uuid:dd51f430-dc42-4638-9abd-70ebf172394a,dd51f430-dc42-4638-9abd-70ebf172394a,2016-07-23T17:09:07,,
+FBC,234,1469293058217.jpg,0,n/a,n/a,n/a,n/a,n/a,True,True,False,False,uuid:6e47af0e-9e23-4ab3-8b03-65132db46580,6e47af0e-9e23-4ab3-8b03-65132db46580,2016-07-23T17:09:08,,
+Ipam,21,1469293330342.jpg,0,n/a,n/a,n/a,n/a,n/a,False,True,True,True,uuid:a3e7a1aa-90cd-4cc5-bff8-32132a48a831,a3e7a1aa-90cd-4cc5-bff8-32132a48a831,2016-07-23T17:09:09,,
+Iamtech,15,1469293569059.jpg,0,8.4833255 -13.2597105 0.0 2288.0,8.4833255,-13.2597105,0.0,2288.0,False,True,True,False,uuid:9660ad8b-5090-488e-bcb4-133d944e6857,9660ad8b-5090-488e-bcb4-133d944e6857,2016-07-23T17:09:10,,
+IPAM,150,1469640504124.jpg,1,8.460626 -13.2501752 0.0 2909.0,8.460626,-13.2501752,0.0,2909.0,True,False,True,False,uuid:3bcf1051-4ac9-4aa2-93a6-6ae8e495488a,3bcf1051-4ac9-4aa2-93a6-6ae8e495488a,2016-07-27T17:36:13,,
+Mk academy,15,1469640711186.jpg,1,8.460626 -13.2501752 0.0 2909.0,8.460626,-13.2501752,0.0,2909.0,True,False,True,False,uuid:8946f0b4-4092-4d14-b176-927f3f0ae447,8946f0b4-4092-4d14-b176-927f3f0ae447,2016-07-27T17:36:19,,
+Mk academy,15,n/a,1,n/a,n/a,n/a,n/a,n/a,True,True,False,False,uuid:5b8d10ab-3fe1-4bde-8266-6e54488bc0ef,5b8d10ab-3fe1-4bde-8266-6e54488bc0ef,2016-07-27T17:36:20,,
+Kono university,10,1469640848612.jpg,1,8.460626 -13.2501752 0.0 2909.0,8.460626,-13.2501752,0.0,2909.0,True,False,True,False,uuid:49b904c1-4b54-49b2-9d74-adea83700623,49b904c1-4b54-49b2-9d74-adea83700623,2016-07-27T17:36:23,,
+Kono university,10,n/a,1,8.460626 -13.2501752 0.0 2909.0,8.460626,-13.2501752,0.0,2909.0,False,False,True,True,uuid:3ff78100-f298-4f8e-bdd5-f66050645271,3ff78100-f298-4f8e-bdd5-f66050645271,2016-07-27T17:36:23,,
+Unimak,55,n/a,0,8.460626 -13.2501752 0.0 2909.0,8.460626,-13.2501752,0.0,2909.0,True,True,True,False,uuid:66c72e76-33a3-4040-9ff3-b1bce26f36d5,66c72e76-33a3-4040-9ff3-b1bce26f36d5,2016-07-27T17:36:24,,
