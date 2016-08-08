@@ -15,9 +15,11 @@
              <a> 
          {% endif %}
          
-         <img src="{{STATIC_URL}}images/formhub_avatar.png" alt={{ profile.name }} width='60' height='60' />
+         <img src="{{STATIC_URL}}images/formhub_avatar.png" alt={{ profile.name }} width='60px' height='60px' />
          {% if is_owner and not profile.gravatar_exists %}
+         <!--  
             <span class="small-link">{% trans "change" %}</span>
+            -->
             </a>
          {% endif %}
          {{ content_user.username }}
