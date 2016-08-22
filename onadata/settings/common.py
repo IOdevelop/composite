@@ -41,7 +41,7 @@ MANAGERS = ADMINS
 
 
 DEFAULT_FROM_EMAIL = 'noreply@ona.io'
-SHARE_PROJECT_SUBJECT = '{} Ona Project has been shared with you.'
+SHARE_PROJECT_SUBJECT = '{} Data Toolbox Project has been shared with you.'
 DEFAULT_SESSION_EXPIRY_TIME = 21600  # 6 hours
 
 # Local time zone for this installation. Choices can be found here:
@@ -51,7 +51,7 @@ DEFAULT_SESSION_EXPIRY_TIME = 21600  # 6 hours
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/New_York'
+TIME_ZONE = 'Africa/Freetown'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -86,7 +86,7 @@ STATIC_URL = '/static/'
 
 # Enketo URL.
 # Configurable settings.
-ENKETO_URL = os.environ.get('ENKETO_URL', 'https://enketo.kobotoolbox.org')
+ENKETO_URL = os.environ.get('ENKETO_URL', 'https://localhost:8006')
 ENKETO_URL= ENKETO_URL.rstrip('/')
 ENKETO_API_TOKEN = os.environ.get('ENKETO_API_TOKEN', 'enketorules')
 ENKETO_VERSION= os.environ.get('ENKETO_VERSION', 'Legacy').lower()

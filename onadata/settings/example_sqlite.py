@@ -1,4 +1,4 @@
-from staging_example import *  # noqa
+from onadata.settings.staging_example import *  # noqa
 
 # choose a different database...
 # sqlite

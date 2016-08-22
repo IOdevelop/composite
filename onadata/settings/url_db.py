@@ -2,7 +2,7 @@ import os
 
 configuration = os.getenv('DJANGO_CONFIGURATION', 'Dev')
 if configuration == 'Dev':
-    from staging_example import *  # noqa
+    from onadata.settings.staging_example import *  # noqa
 else:
     from production_example import *  # noqa
 
