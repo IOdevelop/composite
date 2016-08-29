@@ -1,0 +1,2 @@
+python-digest==1.7
+-e git+https://github.com/jnm/django-digest#egg=django-digest

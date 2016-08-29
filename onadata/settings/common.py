@@ -40,7 +40,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 
-DEFAULT_FROM_EMAIL = 'noreply@ona.io'
+DEFAULT_FROM_EMAIL = 'noreply@dtoolbox.sl'
 SHARE_PROJECT_SUBJECT = '{} Data Toolbox Project has been shared with you.'
 DEFAULT_SESSION_EXPIRY_TIME = 21600  # 6 hours
 

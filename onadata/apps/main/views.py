@@ -61,6 +61,7 @@ from onadata.libs.utils.log import audit_log, Actions
 from onadata.libs.utils.qrcode import generate_qrcode
 from onadata.libs.utils.viewer_tools import enketo_url
 from onadata.libs.utils.export_tools import upload_template_for_external_export
+from django.contrib.auth.models import User
 
 
 def home(request):
@@ -419,44 +420,6 @@ def show(request, username=None, id_string=None, uuid=None):
 
     return render(request, "show.html", data)
 
-@require_GET
-def show2(request, username=None, id_string=None, uuid=None):
-    if uuid:
-        return redirect_to_public_link(request, uuid)
-
-    xform, is_owner, can_edit, can_view = get_xform_and_perms(
-        username, id_string, request)
-    # no access
-    if not (xform.shared or can_view or request.session.get('public_link')):
-        return HttpResponseRedirect(reverse(home))
-
-    data = {}
-    data['cloned'] = len(
-        XForm.objects.filter(user__username__iexact=request.user.username,
-                             id_string__exact=id_string + XForm.CLONED_SUFFIX)
-    ) > 0
-    data['public_link'] = MetaData.public_link(xform)
-    data['is_owner'] = is_owner
-    data['can_edit'] = can_edit
-    data['can_view'] = can_view or request.session.get('public_link')
-    data['xform'] = xform
-    data['content_user'] = xform.user
-    data['base_url'] = "https://%s" % request.get_host()
-    data['source'] = MetaData.source(xform)
-    data['form_license'] = MetaData.form_license(xform).data_value
-    data['data_license'] = MetaData.data_license(xform).data_value
-    data['supporting_docs'] = MetaData.supporting_docs(xform)
-    data['media_upload'] = MetaData.media_upload(xform)
-    data['mapbox_layer'] = MetaData.mapbox_layer_upload(xform)
-    data['external_export'] = MetaData.external_export(xform)
-
-    if is_owner:
-        set_xform_owner_data(data, xform, request, username, id_string)
-
-    if xform.allows_sms:
-        data['sms_support_doc'] = get_autodoc_for(xform)
-
-    return render(request, "show.html", data)
 
 @login_required
 @require_GET
@@ -893,29 +856,7 @@ def form_gallery(request):
 
     return render(request, 'form_gallery.html', data)
 
-def form_gallery2(request):
-    """
-    Return a list of urls for all the shared xls files. This could be
-    made a lot prettier.
-    """
-    data = {}
-    if request.user.is_authenticated():
-        data['loggedin_user'] = request.user
-    data['shared_forms'] = XForm.objects.filter()
-    # build list of shared forms with cloned suffix
-    id_strings_with_cloned_suffix = [
-        x.id_string + XForm.CLONED_SUFFIX for x in data['shared_forms']
-    ]
-    # build list of id_strings for forms this user has cloned
-    data['cloned'] = [
-        x.id_string.split(XForm.CLONED_SUFFIX)[0]
-        for x in XForm.objects.filter(
-            user__username__iexact=request.user.username,
-            id_string__in=id_strings_with_cloned_suffix
-        )
-    ]
 
-    return render(request, 'form_gallery2.html', data)
 
 
 def download_metadata(request, username, id_string, data_id):
@@ -1330,8 +1271,11 @@ def update_xform(request, username, id_string):
 @is_owner
 def activity(request, username):
     owner = get_object_or_404(User, username=username)
-
-    return render(request, 'activity.html', {'user': owner})
+    user_instance=User.objects.all()
+    users_list=[]
+    for user in user_instance:
+        users_list.append(user)
+    return render(request, 'activity.html', {'user': owner,'users_list':users_list})
 
 
 def activity_fields(request):
