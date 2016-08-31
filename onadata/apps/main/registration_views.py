@@ -13,9 +13,11 @@ class FHRegistrationView(RegistrationView):
             name=form.cleaned_data['name'],
             city=form.cleaned_data['city'],
             country=form.cleaned_data['country'],
+            
             organization=form.cleaned_data['organization'],
-            home_page=form.cleaned_data['home_page'],
-            twitter=form.cleaned_data['twitter'],
+            
+            #home_page=form.cleaned_data['home_page'],
+            #twitter=form.cleaned_data['twitter'],
             #inclusion
             group=form.cleaned_data['group'],
             status=form.cleaned_data['status'],

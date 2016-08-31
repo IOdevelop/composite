@@ -20,8 +20,8 @@ class UserProfile(models.Model):
     country = models.CharField(max_length=2, choices=COUNTRIES, blank=True)
     group = models.CharField(max_length=15, choices=GROUPS, blank=True)
     organization = models.CharField(max_length=255, blank=True)
-    home_page = models.CharField(max_length=255, blank=True)
-    twitter = models.CharField(max_length=255, blank=True)
+    #home_page = models.CharField(max_length=255, blank=True)
+    #twitter = models.CharField(max_length=255, blank=True)
     description = models.CharField(max_length=255, blank=True)
     require_auth = models.BooleanField(
         default=False,
