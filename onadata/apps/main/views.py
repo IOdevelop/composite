@@ -62,6 +62,8 @@ from onadata.libs.utils.qrcode import generate_qrcode
 from onadata.libs.utils.viewer_tools import enketo_url
 from onadata.libs.utils.export_tools import upload_template_for_external_export
 from django.contrib.auth.models import User
+from onadata.apps.main.models.user_profile import UserProfile
+
 
 
 def home(request):
@@ -1271,11 +1273,11 @@ def update_xform(request, username, id_string):
 @is_owner
 def activity(request, username):
     owner = get_object_or_404(User, username=username)
-    user_instance=User.objects.all()
+    user_instance=UserProfile.objects.all()
     users_list=[]
     for user in user_instance:
         users_list.append(user)
-    return render(request, 'activity.html', {'user': owner,'users_list':users_list})
+    return render(request, 'activity.html', {'user': owner,'users_list':user_instance})
 
 
 def activity_fields(request):

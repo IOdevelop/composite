@@ -7,6 +7,13 @@
 <section id="shared-forms">
   <div class="page-header">
     <h2>{% blocktrans %} Users{% endblocktrans %}</h2>
+    {% url "registration_register" as registration_url %}
+                        		{% blocktrans %}
+                        		<a class="btn large btn-primary" href="{{ registration_url }}">Create User</a>
+                        		
+                        		{% endblocktrans %}
+    
+    
   </div>
     <div id="mfeedback">&nbsp;</div>
 
@@ -19,6 +26,7 @@
 
         <th>{% trans "User name" %}</th>
         <th>{% trans "Full Name" %}</th>
+        <th>{% trans "Group" %}</th>
         <th>{% trans "Email" %}</th>
         <th>{% trans "Status" %}</th>
         <!--  
@@ -36,15 +44,16 @@
            
         </td>
         -->
-        <td>{{ data_dictionary.username }}</td>
-        <td>{{ data_dictionary.get_full_name }}</td>
-        <td>{{ data_dictionary.email }}</td>
+        <td>{{ data_dictionary.user }}</td>
+        <td>{{ data_dictionary.name }}</td>
+        <td>{{ data_dictionary.group }}</td>
+        <td>{{ data_dictionary.user.email }}</td>
 
         <td>
-        {% if data_dictionary.is_active %}
+        {% if data_dictionary.user.is_active %}
         <p>Active</p>
         {% endif %}
-        {% if not data_dictionary.is_active %}
+        {% if not data_dictionary.user.is_active %}
         <p>Inactive</p>
         {% endif %}
         </td>

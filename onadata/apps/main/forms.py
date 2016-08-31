@@ -17,7 +17,7 @@ from registration.models import RegistrationProfile
 
 from onadata.apps.main.models import UserProfile
 from onadata.apps.viewer.models.data_dictionary import upload_to
-from onadata.libs.utils.country_field import COUNTRIES
+from onadata.libs.utils.country_field import COUNTRIES,GROUPS
 from onadata.libs.utils.logger_tools import publish_xls_form
 
 FORM_LICENSES_CHOICES = (
@@ -97,12 +97,16 @@ class UserProfileFormRegister(forms.Form):
                            max_length=255)
     country = forms.ChoiceField(widget=forms.Select(), required=False,
                                 choices=COUNTRIES, initial='ZZ')
+    group = forms.ChoiceField(widget=forms.Select(), required=False,
+                                choices=GROUPS, initial='')
     organization = forms.CharField(widget=forms.TextInput(), required=False,
                                    max_length=255)
     home_page = forms.CharField(widget=forms.TextInput(), required=False,
                                 max_length=255)
     twitter = forms.CharField(widget=forms.TextInput(), required=False,
                               max_length=255)
+    
+                                   
 
     recaptcha_challenge_field = forms.CharField(required=False, max_length=512)
     recaptcha_response_field = forms.CharField(
@@ -113,6 +117,7 @@ class UserProfileFormRegister(forms.Form):
             UserProfile(user=new_user, name=self.cleaned_data['name'],
                         city=self.cleaned_data['city'],
                         country=self.cleaned_data['country'],
+                        group=self.cleaned_data['group'],
                         organization=self.cleaned_data['organization'],
                         home_page=self.cleaned_data['home_page'],
                         twitter=self.cleaned_data['twitter'])

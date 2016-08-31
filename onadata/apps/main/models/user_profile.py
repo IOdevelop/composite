@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy
 from guardian.shortcuts import get_perms_for_model, assign_perm
 from rest_framework.authtoken.models import Token
 from jsonfield import JSONField
-from onadata.libs.utils.country_field import COUNTRIES
+from onadata.libs.utils.country_field import COUNTRIES,GROUPS
 from onadata.libs.utils.gravatar import get_gravatar_img_link, gravatar_exists
 from onadata.apps.main.signals import set_api_permissions
 
@@ -18,6 +18,7 @@ class UserProfile(models.Model):
     name = models.CharField(max_length=255, blank=True)
     city = models.CharField(max_length=255, blank=True)
     country = models.CharField(max_length=2, choices=COUNTRIES, blank=True)
+    group = models.CharField(max_length=15, choices=GROUPS, blank=True)
     organization = models.CharField(max_length=255, blank=True)
     home_page = models.CharField(max_length=255, blank=True)
     twitter = models.CharField(max_length=255, blank=True)
@@ -33,6 +34,9 @@ class UserProfile(models.Model):
     created_by = models.ForeignKey(User, null=True, blank=True)
     num_of_submissions = models.IntegerField(default=0)
     metadata = JSONField(default={}, blank=True)
+    status=User.is_active==True
+    staff=User.is_staff=True
+    
 
     def __unicode__(self):
         return u'%s[%s]' % (self.name, self.user.username)

@@ -256,6 +256,12 @@ COUNTRIES = (
 )
 
 
+GROUPS = (
+    ('Enumerator', _('Enumerator')),
+    ('Admin', _('Admin')),
+    )
+
+
 class CountryField(models.CharField):
 
     def __init__(self, *args, **kwargs):
@@ -266,3 +272,15 @@ class CountryField(models.CharField):
 
     def get_internal_type(self):
         return "CharField"
+    
+class GroupField(models.CharField):
+
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault('maxlength', 2)
+        kwargs.setdefault('choices', GROUPS)
+
+        super(CountryField, self).__init__(*args, **kwargs)
+
+    def get_internal_type(self):
+        return "CharField"    
+
