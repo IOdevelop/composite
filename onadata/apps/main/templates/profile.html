@@ -32,6 +32,7 @@
 	 {% if location  %}
          <p><strong>{% trans "Location:" %} </strong>{{ location }}</p>
 	 {% endif %}
+	 <!--  
 	 {% if profile.home_page %}
          <p><strong>{% trans "Website:" %}</strong><a href="{{ home_page }}">{{ profile.home_page }}</a></p>
 	 {% endif %}
@@ -40,6 +41,7 @@
          <p><strong>{% trans "Twitter:" %}</strong><a href="http://www.twitter.com/{{ twitter }}">@{{ twitter }}</a></p>
 	   {% endif %}
      {% endwith %}
+     -->
          <p><strong>{% trans "Member since:" %} </strong>{{ content_user.date_joined|date:"F j, Y" }}</p>
        </div>
        <div class="span4">

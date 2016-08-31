@@ -11,7 +11,7 @@
     <div class="span8">
       <form class="well" method="post" action=".">
         {% csrf_token %}
-        <p>{% trans "Fields marked wth an asterisk (*) are required." %}</p>
+        <p>{% trans "Fields marked with an asterisk (*) are required." %}</p>
         <table>
         {% for field in form %}
         	{% if not field.name == "recaptcha_challenge_field" and not field.name == "recaptcha_response_field" %}

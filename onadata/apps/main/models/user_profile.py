@@ -33,7 +33,7 @@ class UserProfile(models.Model):
     phonenumber = models.CharField(max_length=30, blank=True)
     created_by = models.ForeignKey(User, null=True, blank=True)
     num_of_submissions = models.IntegerField(default=0)
-    metadata = JSONField(default={}, blank=True)
+#    metadata = JSONField(default={}, blank=True)
     status=User.is_active==True
     staff=User.is_staff=True
     
@@ -49,11 +49,11 @@ class UserProfile(models.Model):
     def gravatar_exists(self):
         return gravatar_exists(self.user)
 
-    @property
-    def twitter_clean(self):
-        if self.twitter.startswith("@"):
-            return self.twitter[1:]
-        return self.twitter
+#    @property
+#    def twitter_clean(self):
+#        if self.twitter.startswith("@"):
+#            return self.twitter[1:]
+#        return self.twitter
 
     class Meta:
         app_label = 'main'

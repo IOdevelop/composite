@@ -48,12 +48,14 @@ def set_profile_data(data, content_user):
     forms = content_user.xforms.filter(shared__exact=1)
     num_forms = forms.count()
     user_instances = profile.num_of_submissions
-    home_page = profile.home_page
-    if home_page and re.match("http", home_page) is None:
-        home_page = "http://%s" % home_page
+   
+#    home_page = profile.home_page
+#   if home_page and re.match("http", home_page) is None:
+#      home_page = "http://%s" % home_page 
 
     data.update({'location': location, 'user_instances': user_instances,
-                 'home_page': home_page, 'num_forms': num_forms,
+                #'home_page': home_page,
+                  'num_forms': num_forms,
                  'forms': forms, 'profile': profile,
                  'content_user': content_user})
 
