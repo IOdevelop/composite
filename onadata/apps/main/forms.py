@@ -101,10 +101,11 @@ class UserProfileFormRegister(forms.Form):
                                 choices=GROUPS, initial='')
     organization = forms.CharField(widget=forms.TextInput(), required=False,
                                    max_length=255)
-    home_page = forms.CharField(widget=forms.TextInput(), required=False,
-                                max_length=255)
-    twitter = forms.CharField(widget=forms.TextInput(), required=False,
-                              max_length=255)
+    
+    #home_page = forms.CharField(widget=forms.TextInput(), required=False,
+    #                           max_length=255)
+    #twitter = forms.CharField(widget=forms.TextInput(), required=False,
+    #                         max_length=255)
     
                                    
 
