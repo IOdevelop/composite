@@ -41,7 +41,7 @@ MANAGERS = ADMINS
 
 
 DEFAULT_FROM_EMAIL = 'casrit.ict@gmail.com'
-SHARE_PROJECT_SUBJECT = '{} Data Toolbox Project has been shared with you.'
+SHARE_PROJECT_SUBJECT = '{} A Data Toolbox Project has been shared with you.'
 DEFAULT_SESSION_EXPIRY_TIME = 28800  # 8 hours
 
 # Local time zone for this installation. Choices can be found here:
