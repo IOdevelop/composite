@@ -120,8 +120,10 @@ class UserProfileFormRegister(forms.Form):
                         country=self.cleaned_data['country'],
                         group=self.cleaned_data['group'],
                         organization=self.cleaned_data['organization'],
-                        home_page=self.cleaned_data['home_page'],
-                        twitter=self.cleaned_data['twitter'])
+                     #   home_page=self.cleaned_data['home_page'],
+                     #   twitter=self.cleaned_data['twitter']
+                        
+                        )
         new_profile.save()
         return new_profile
 

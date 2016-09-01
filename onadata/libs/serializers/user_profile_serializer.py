@@ -126,8 +126,10 @@ class UserProfileSerializer(serializers.HyperlinkedModelSerializer):
             city=validated_data.get('city', u''),
             country=validated_data.get('country', u''),
             organization=validated_data.get('organization', u''),
-            home_page=validated_data.get('home_page', u''),
-            twitter=validated_data.get('twitter', u''))
+        #    home_page=validated_data.get('home_page', u''),
+        #    twitter=validated_data.get('twitter', u'')
+            
+            )
 
         return profile
 

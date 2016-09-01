@@ -7,7 +7,7 @@ from boto.pyami.startup import Startup
 class FHRegistrationView(RegistrationView):
     def register(self, request, form):
         new_user = \
-            super(FHRegistrationView, self).register(request, form)
+            super(FHRegistrationView, self).register(request, form)    
         new_profile = UserProfile(
             user=new_user,
             name=form.cleaned_data['name'],

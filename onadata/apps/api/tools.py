@@ -110,8 +110,9 @@ def create_organization_object(org_name, creator, attrs={}):
         city=attrs.get('city', u''),
         country=attrs.get('country', u''),
         organization=attrs.get('organization', u''),
-        home_page=attrs.get('home_page', u''),
-        twitter=attrs.get('twitter', u''))
+    #    home_page=attrs.get('home_page', u''),
+     #   twitter=attrs.get('twitter', u'')
+        )
     return profile
 
 
