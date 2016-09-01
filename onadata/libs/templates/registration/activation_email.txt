@@ -1,9 +1,8 @@
+
+
 {% load i18n %}
-{% url "registration_activate" activation_key as register_url %}
-{% blocktrans with site_name=site.name site_domain=site.domain expiration_days=expiration_days expiration_days_p=expiration_days|pluralize %}You have registered on {{ site_name }}. To activate your account
-please click on the link below:
-
-http://{{ site_domain }}{{ register_url }}
-
-The link above is valid for {{ expiration_days }} day{{ expiration_days_p }}.
-{% endblocktrans %}
+{% trans "Activation mail from Data Toolbox" %}
+{% trans "An account was created for you at Data Toolbox! Click the following link to activate it within the next 8 hours" %}:
+http://localhost:8000{% url 'registration_activate' activation_key %}
+{% trans "Please ignore this message if you think its a mistake." %}
+{% trans "Thank You. Data Toolbox Management" %}!

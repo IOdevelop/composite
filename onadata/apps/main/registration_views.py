@@ -20,8 +20,6 @@ class FHRegistrationView(RegistrationView):
             #twitter=form.cleaned_data['twitter'],
             #inclusion
             group=form.cleaned_data['group'],
-            status=form.cleaned_data['status'],
-            staff=form.cleaned_data['staff'],
             
         )
         new_profile.save()

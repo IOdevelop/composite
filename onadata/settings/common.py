@@ -40,9 +40,9 @@ ADMINS = (
 MANAGERS = ADMINS
 
 
-DEFAULT_FROM_EMAIL = 'noreply@dtoolbox.sl'
+DEFAULT_FROM_EMAIL = 'casrit.ict@gmail.com'
 SHARE_PROJECT_SUBJECT = '{} Data Toolbox Project has been shared with you.'
-DEFAULT_SESSION_EXPIRY_TIME = 21600  # 6 hours
+DEFAULT_SESSION_EXPIRY_TIME = 28800  # 8 hours
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -539,3 +539,10 @@ SECRET_KEY = 'mlfs33^s1l4xf6a36$0#j%dd*sisfoi&)&4s-v=91#^l01v)*j'
 ALLOWED_HOSTS = []
 DEBUG=True
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'francisbnagura@gmail.com'
+EMAIL_HOST_PASSWORD = '23277244905'
+EMAIL_PORT = 587
+
+REGISTRATION_EMAIL_HTML = False
