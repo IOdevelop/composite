@@ -541,8 +541,8 @@ DEBUG=True
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'francisbnagura@gmail.com'
-EMAIL_HOST_PASSWORD = '23277244905'
+EMAIL_HOST_USER = 'casrit.ict@gmail.com'
+EMAIL_HOST_PASSWORD = 'casritict'
 EMAIL_PORT = 587
 
 REGISTRATION_EMAIL_HTML = False
