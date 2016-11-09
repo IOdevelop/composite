@@ -526,9 +526,9 @@ MONGO_DB = MONGO_CONNECTION[MONGO_DATABASE['NAME']]
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'kdb',
+        'NAME': 'ddb',
         'USER': 'nebula',
-        'PASSWORD':'123',
+        'PASSWORD':'1',
         'HOST': 'localhost',
         'PORT': '',                      # Set to empty string for default.
     }
@@ -546,3 +546,32 @@ EMAIL_HOST_PASSWORD = 'casritict'
 EMAIL_PORT = 587
 
 REGISTRATION_EMAIL_HTML = False
+
+
+TESTING_MODE = False
+if len(sys.argv) >= 2 and (sys.argv[1] == "test" or sys.argv[1] == "test_all"):
+    # This trick works only when we run tests from the command line.
+    TESTING_MODE = True
+else:
+    TESTING_MODE = False
+
+if TESTING_MODE:
+    MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'test_media/')
+    subprocess.call(["rm", "-r", MEDIA_ROOT])
+    MONGO_DATABASE['NAME'] = "formhub_test"
+    # need to have CELERY_ALWAYS_EAGER True and BROKER_BACKEND as memory
+    # to run tasks immediately while testing
+    CELERY_ALWAYS_EAGER = True
+    BROKER_BACKEND = 'memory'
+    ENKETO_API_TOKEN = 'abc'
+    #TEST_RUNNER = 'djcelery.contrib.test_runner.CeleryTestSuiteRunner'
+else:
+    pass
+    #MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media/')
+
+if PRINT_EXCEPTION and DEBUG:
+    MIDDLEWARE_CLASSES += ('utils.middleware.ExceptionLoggingMiddleware',)
+# Clear out the test database
+if TESTING_MODE:
+    MONGO_DB.instances.drop()
+
