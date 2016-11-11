@@ -526,7 +526,7 @@ MONGO_DB = MONGO_CONNECTION[MONGO_DATABASE['NAME']]
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'ddb',
+        'NAME': 'kdb',
         'USER': 'nebula',
         'PASSWORD':'1',
         'HOST': 'localhost',
