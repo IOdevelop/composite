@@ -109,8 +109,8 @@
 <p>
 {% blocktrans with url=url %}
 The url of this web application <strong>{{ url }}</strong>
-must be given to <strong>Data Collect App </strong> before it will get forms from and
-submit data to Data Toolbox. In Collect's Main Menu, press the Menu
+must be given to the <strong><a href="{{ STATIC_URL }}apk/Data-Toolbox.apk">Data Toolbox app</a></strong> before it will get forms from and
+submit data to the Data Toolbox server. In Collect's Main Menu, press the Menu
 button. Select Server Preferences, then Server. Enter
 <strong>{{ url }}</strong> as the server. {% endblocktrans %}
 </p>
