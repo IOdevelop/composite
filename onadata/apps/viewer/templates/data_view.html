@@ -2,10 +2,10 @@
 {% load i18n %}
 
 {% block additional-headers %}
-    <link href="/static/bower_components/backgrid/lib/backgrid.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/bower_components/backgrid-filter/backgrid-filter.min.css" />
-    <link rel="stylesheet" href="/static/bower_components/backgrid-paginator/backgrid-paginator.min.css" />
-    <link href="/static/css/data_view.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}bower_components/backgrid/lib/backgrid.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{STATIC_URL}}bower_components/backgrid-filter/backgrid-filter.min.css" />
+    <link rel="stylesheet" href="{{STATIC_URL}}bower_components/backgrid-paginator/backgrid-paginator.min.css" />
+    <link href="{{STATIC_URL}}css/data_view.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
