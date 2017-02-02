@@ -187,7 +187,7 @@ def profile(request, username):
                     'id_string': survey.id_string
                 }),
                 'text': _(u'Successfully published %(form_id)s. Click on the Projects link above to get started'
-                        #  u' <a href="%(form_url)s">Enter Web Form</a>'
+                        u' <a href="%(form_url)s">Enter Web Form</a>'
                          # u' or <a href="#preview-modal" data-toggle="modal">'
                          # u'Preview Web Form</a>'
                           )
