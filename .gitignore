@@ -16,6 +16,8 @@ csvs
 # pip build dir
 build
 
+bower.json
+
 # media folder used by tests
 # TODO figure out a way to clean this up rather than ignore it.
 /onadata/test_media
@@ -50,7 +52,8 @@ run_gunicorn.sh
 celerybeat-schedule
 
 # bower
-/onadata/apps/main/static/bower_components
+#/onadata/apps/main/static/bower_components
+
 custom_template
 /node_modules
 
