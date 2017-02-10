@@ -175,7 +175,7 @@
             <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "View Photos" %}" href="{% url "onadata.apps.main.views.form_photos" content_user.username xform.id_string %}">
                {% trans "Photos" %}
             </a>
-            <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "View Submitted Data" %}" href="{% url "onadata.apps.viewer.views.data_view" content_user.username xform.id_string %}">
+            <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "View Submitted Data" %}" href="{% url "onadata.apps.survey_report.views.html_export" content_user.username xform.id_string  %}">
                  {% trans "View Data" %}
             </a>
             <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "Browse Data (One by One)" %}" href="{% url "onadata.apps.viewer.views.instance" content_user.username xform.id_string %}">
@@ -237,10 +237,10 @@
               </li>
             </ul>
           </div>
-          
+
           <div class="btn-group">
             <a class="btn" href="{% url "onadata.apps.export.views.export_menu" content_user.username xform.id_string %}" rel="tooltip" data-original-title="{% trans 'Do Advance Exports' %}"><font color=#000>{% trans "Advance Exports" %}</font></a>
-            <!--  
+            <!--
             <button class="btn dropdown-toggle" data-toggle="dropdown">
               <span class="caret"></span>
             </button>

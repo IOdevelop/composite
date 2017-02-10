@@ -138,16 +138,15 @@ h1 {
 
 </style>
 
-<div class="sub-header-bar">
-  <div>
-    <a class="sub-header__back" href="{% url "onadata.apps.main.views.show" xform.user.username xform.id_string %}"><i class="fa fa-chevron-left"></i> {% trans "Return to" %} {{ xform.title }}</a>
-  </div>
-</div>
-
 <form action="{% url 'formpack_html_export' username id_string %}?page={{page}}"
       method="get" accept-charset="utf-8">
 
   <div class="formpack_html_export__options">
+
+
+  <div>
+    <h2>{% trans "Submissions for " %}<a  href="{% url "onadata.apps.main.views.show" xform.user.username xform.id_string %}"><i class="fa fa-chevron-left"></i>{{ xform.title }}</a></h2>
+  </div>
 
     <span class="select select--lang">
       <label for="lang">{% trans "Value and header format" %}</label>
@@ -188,7 +187,7 @@ h1 {
 
 </form>
 
-<table style="overflow: auto;">
+<table style="height: auto; overflow: auto;">
 
     <thead>
         <tr>
