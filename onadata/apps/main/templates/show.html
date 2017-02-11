@@ -183,7 +183,7 @@
             </a>
             
 
-            <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "View Statistics" %}" href="{% url "onadata.apps.survey_report.views.auto_report" content_user.username xform.id_string %}">
+            <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "View Reports" %}" href="{% url "onadata.apps.survey_report.views.auto_report" content_user.username xform.id_string %}">
                  {% trans "Project Reports" %}<!--  <i></i>class="icon-bar-chart icon-white"-->
             </a>
             <a class="btn btn-info" btn-info  rel="tooltip" title="{% trans "Custom Statistics" %}" href="{% url "onadata.apps.viewer.views.stats_tables" content_user.username xform.id_string %}">
@@ -239,7 +239,9 @@
           </div>
 
           <div class="btn-group">
-            <a class="btn" href="{% url "onadata.apps.export.views.export_menu" content_user.username xform.id_string %}" rel="tooltip" data-original-title="{% trans 'Do Advance Exports' %}"><font color=#000>{% trans "Advance Exports" %}</font></a>
+            <a class="btn" href="{% url "download_xlsform" content_user.username xform.id_string %}">
+                        <button class="btn btn-small btn-success"> {% trans "Get Questionnaire" %}</button>
+                    </a>
             <!--
             <button class="btn dropdown-toggle" data-toggle="dropdown">
               <span class="caret"></span>
