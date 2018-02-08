@@ -20,7 +20,6 @@ from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 from path import tempdir
 
 from onadata.libs.utils.user_auth import has_permission
-
 from formpack import FormPack
 
 

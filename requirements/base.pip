@@ -19,6 +19,8 @@ psycopg2==2.5.4
 pymongo==2.7.2
 lxml==3.4.0
 #-e git+https://github.com/onaio/pyxform.git@onaio#egg=pyxform
+-e git+https://github.com/kobotoolbox/pyxform.git@6dfff060fc2ad6c575c6a7d953c381d2180e6833#egg=pyxform
+
 # kobo fork supports csvs with utf, character escaping, etc.
 -e git+https://github.com/kobotoolbox/pyxform.git#egg=pyxform-dev
 django-reversion==1.8.4
