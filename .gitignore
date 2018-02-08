@@ -23,7 +23,7 @@ bower.json
 /onadata/test_media
 /onadata/media
 /onadata/static
-/onadata/settings/common.py
+/onadata/settings
 
 .~lock.*
 .DS_Store
