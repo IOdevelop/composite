@@ -19,7 +19,8 @@ psycopg2
 pymongo==2.7.2
 lxml
 #-e git+https://github.com/onaio/pyxform.git@onaio#egg=pyxform
--e git+https://github.com/kobotoolbox/pyxform.git@6dfff060fc2ad6c575c6a7d953c381d2180e6833#egg=pyxform
+#-e git+https://github.com/kobotoolbox/pyxform.git@6dfff060fc2ad6c575c6a7d953c381d2180e6833#egg=pyxform
+-e git+https://github.com/kobotoolbox/pyxform.git@66090280c98dd02823bb63b89571d5714b754425#egg=pyxform-dev
 
 # kobo fork supports csvs with utf, character escaping, etc.
 -e git+https://github.com/kobotoolbox/pyxform.git#egg=pyxform-dev
@@ -82,3 +83,4 @@ django-db-readonly==0.3.2
 transifex-client
 django-sslserver
 django_archive
+django-dbbackup

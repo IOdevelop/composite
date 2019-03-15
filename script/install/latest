@@ -6,21 +6,21 @@ sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt xenial-pgdg main" >> /etc/apt/sources.list'
 sudo apt-get update -y
 wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
-sudo apt-get update -qqy
-sudo apt-get install -qq gfortran libatlas-base-dev libjpeg-dev zlib1g-dev python-software-properties ghostscript
-sudo apt install -qq postgresql-10
-sudo apt install -qq postgresql-10-postgis-2.4 
-sudo apt install -qq postgresql-10-postgis-scripts
+sudo apt-get update -qqy -y
+sudo apt-get install -qq gfortran libatlas-base-dev libjpeg-dev zlib1g-dev python-software-properties ghostscript -y
+sudo apt install -qq postgresql-10 -y
+sudo apt install -qq postgresql-10-postgis-2.4 -y
+sudo apt install -qq postgresql-10-postgis-scripts -y
 # install Geospatial libraries for GeoDjango
-sudo apt-get install -qq binutils libproj-dev gdal-bin
+sudo apt-get install -qq binutils libproj-dev gdal-bin -y
 
 
 # only install node if testing UI
-sudo apt-get install -qqy nodejs
-sudo apt-get install npm
-sudo npm install --silent -g bower karma grunt-cli
+sudo apt-get install -qqy nodejs -y
+sudo apt-get install npm -y
+sudo npm install --silent -g bower karma grunt-cli -y
 # install memcached
-sudo apt-get install -qq memcached libmemcached-dev
+sudo apt-get install -qq memcached libmemcached-dev -y
 
 # create db user
 sudo su postgres -c "psql -c \"CREATE USER composite WITH PASSWORD 'composite';\""
@@ -29,6 +29,6 @@ sudo su postgres -c "psql -d composite -c \"CREATE EXTENSION IF NOT EXISTS postg
 sudo su postgres -c "psql -d composite -c \"CREATE EXTENSION IF NOT EXISTS postgis_topology;\""
 
 #install lxm dependency
-sudo apt-get install postgresql postgresql-contrib libpq-dev python-dev
-sudo apt-get install libxml2-dev libxslt-dev python-dev
+sudo apt-get install postgresql postgresql-contrib libpq-dev python-dev -y
+sudo apt-get install libxml2-dev libxslt-dev python-dev -y
 

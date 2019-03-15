@@ -540,8 +540,8 @@ DATABASES = {
 }
 
 
-SECRET_KEY = 'mlfs33^s1l4xf6a36$0#j%dd*sisfoi&)&4s-v=91#^l01v)*j'
-ALLOWED_HOSTS = ['192.168.1.12','127.0.0.1','localhost','192.168.43.174']
+SECRET_KEY = 'mlfs33^s1l4xf6a36$0#j%dd*sisfoi&)&4s-v=91#^l01v)*jio'
+ALLOWED_HOSTS = ['35.231.244.231/','127.0.0.1','localhost']
 DEBUG=True
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
