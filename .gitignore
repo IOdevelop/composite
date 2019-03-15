@@ -6,6 +6,7 @@ local_settings.py
 pyxform
 search_index
 tmp/*
+onadata/static
 xform_manager_dataset.json
 deployments.json
 requirements/uninstall.pip
