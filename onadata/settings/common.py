@@ -532,8 +532,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'composite',
-        'USER': 'nebula',
-        'PASSWORD':'1',
+        'USER': 'composite',
+        'PASSWORD':'composite',
         'HOST': 'localhost',
         'PORT': '',                      
     }
@@ -545,8 +545,8 @@ ALLOWED_HOSTS = ['192.168.1.12','127.0.0.1','localhost','192.168.43.174']
 DEBUG=True
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'casrit.ict@gmail.com'
-EMAIL_HOST_PASSWORD = 'casritict'
+EMAIL_HOST_USER = 'ciroltech@gmail.com'
+EMAIL_HOST_PASSWORD = 'haroldfrancis'
 EMAIL_PORT = 587
 
 REGISTRATION_EMAIL_HTML = False
