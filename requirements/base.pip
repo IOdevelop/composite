@@ -82,4 +82,3 @@ django-db-readonly==0.3.2
 transifex-client
 django-sslserver
 django_archive
-dbbackup
