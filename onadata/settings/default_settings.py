@@ -13,9 +13,9 @@ from onadata.settings.staging_example import *  # nopep8
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'onadata',
-        'USER': 'onadata',
-        'PASSWORD': '',
+        'NAME': 'composite',
+        'USER': 'composite',
+        'PASSWORD':'composite',
         'HOST': '127.0.0.1',
         # Replacement for TransactionMiddleware
         'ATOMIC_REQUESTS': True,
